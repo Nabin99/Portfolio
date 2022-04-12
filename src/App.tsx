@@ -1,13 +1,11 @@
-import logo from './assests/images/logo.svg';
-import './styles/App.css';
+import Layout from './components/layout/layout';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <Layout>
+      <div>App.js</div>
+    </Layout>
   );
 }
 

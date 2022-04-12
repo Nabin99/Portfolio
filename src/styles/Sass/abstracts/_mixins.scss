@@ -1,0 +1,19 @@
+@mixin squireGenerator($size:10vw){
+    width:$size;
+    height: $size;
+}
+@mixin flex-center-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin full-size($wdth:10vw,$hgt:10vh){
+    width:$wdth;
+    height:$hgt;
+}
