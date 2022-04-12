@@ -8,6 +8,7 @@
     left:0;
     overflow: hidden;
     z-index: -1;
+    background-color: $bg-clr-lgt
 }
 .displayFlex{
     @include flex-center-column;
@@ -18,9 +19,9 @@
     left:0;
 
     .svgLogo{
-        @include squireGenerator(10rem);
+        @include squireGenerator(5rem);
         &>svg{
-            @include squireGenerator(10rem);
+            @include squireGenerator(5rem);
         }
 
     }
@@ -34,14 +35,13 @@
 }
 
 .svgBackground{
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient( to bottom right ,$gradiant-color-top,$gradiant-color-bottom);
+    @include full-size(100vw,100vh);
+  background-image: linear-gradient( to bottom right ,transparantize($gradiant-color-top),$gradiant-color-bottom);
 }
 
 @media (prefers-color-scheme: dark) {
     .container{
-        background-color: $primary-btn-clr-dark;
+        background-color: $bg-clr-dark;
     }
     .message{
         color:$primary-txt-clr-dark !important;

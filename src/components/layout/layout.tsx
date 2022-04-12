@@ -1,5 +1,4 @@
 import Loading from "../loading/loading";
-import React from "react";
 import NavBar from "../navbar/navbar";
 
 interface layoutTypes {
