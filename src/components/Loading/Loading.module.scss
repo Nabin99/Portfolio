@@ -1,0 +1,55 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.container {
+  @include full-size(100vw, 100vh);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2;
+  background-color: $bg-clr-lgt;
+}
+.displayFlex {
+  @include flex-center-column;
+  @include full-size(100vw, 100vh);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .svgLogo {
+    @include squireGenerator(5rem);
+    & > svg {
+      @include squireGenerator(5rem);
+    }
+  }
+  & > .message {
+    font-family: $heading-font;
+    margin-top: 10px;
+    z-index: 1;
+    color: $primary-txt-clr-lgt;
+    font-size: large;
+  }
+}
+
+.svgBackground {
+  @include full-size(100vw, 100vh);
+  background-image: linear-gradient(
+    to bottom right,
+    transparantize($gradiant-color-top),
+    $gradiant-color-bottom
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: $bg-clr-dark;
+  }
+  .message {
+    color: $primary-txt-clr-dark !important;
+  }
+  .svgBackground {
+    opacity: 0.4;
+  }
+}
