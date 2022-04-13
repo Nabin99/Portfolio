@@ -1,0 +1,39 @@
+@import '../../../styles/Sass/abstracts/variables';
+@import '../../../styles/Sass/abstracts/mixins';
+
+
+
+.footer{
+    background-color: $bg-clr-lgt;
+    &>section{
+        background-color:rgba(33, 23, 31, 1);
+        padding: 2rem 0rem;
+    }
+}
+.footerWrapper{
+    width:100%;
+    @include flex-box-generic(center,center,column);
+    text-align: center;
+
+    &>.logoWrapper{
+        @include flex-box-generic(center,center,row);
+        font-family: $heading-font;
+        font-size: 140%;
+        gap:1rem;
+        color:$heading-txt-clr-dark;
+    &>img{
+        @include squireGenerator(4rem);
+
+    }
+    }
+    & p{
+        margin-top: 2rem;
+        color: $paragraph-txt-clr-dark
+    }
+}
+
+@media (prefers-color-scheme:dark){
+    .footer{
+        background-color: $bg-clr-dark;
+    }
+}

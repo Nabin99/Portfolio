@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from "../loading/loading";
 import NavBar from "../navbar/navbar";
+import FooterSection from "./footer/footer";
 import styles from "./layout.module.scss";
 
 interface layoutTypes {
@@ -34,6 +35,7 @@ const Layout= ({ children }:layoutTypes) =>{
         {
             displayLoading? <Loading />:null
         }
+        <FooterSection/>
         </>
     );
 }

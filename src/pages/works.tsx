@@ -1,6 +1,6 @@
 const Works = () =>{
     return(
-        <div>Workss </div>
+        <div>Works </div>
     )
 }
 export default Works;

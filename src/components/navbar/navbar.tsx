@@ -105,7 +105,7 @@ type NavType = {
 
 const NavItem = ({title,toggle}:NavType):JSX.Element =>{
     return(
-        <Link to={`/${title}`} title={title} onClick={toggle}>
+        <Link to={`/${title.toLowerCase()}`} title={title} onClick={toggle}>
          <div className={styles.navItem}>
             <span>{title}</span>
         </div>
