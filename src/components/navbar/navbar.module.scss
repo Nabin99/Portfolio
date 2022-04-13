@@ -1,0 +1,120 @@
+@import '../../styles/Sass/abstracts/mixins';
+@import '../../styles/Sass/abstracts/variables';
+
+.container{
+    position: absolute;
+    top:1rem;
+    @include flex-center-row;
+    width:100vw;
+    &>div{
+        // 
+        padding:0 .2rem;
+        // background-color: $bg-clr-dark;
+         @include gen-linear-gradient($gradiant-color-top,$gradiant-color-bottom);
+        @include flex-box-generic(space-between,center,row);
+        width: 90%;
+        border-radius: .2rem;
+
+    min-height: 3rem;
+        &>div{
+            @include flex-center-row;
+        }
+    }
+    
+}
+.navItem{
+    @include flex-box-generic(space-evenly,center,row);
+    padding:.6rem 1rem;
+   
+    &>span{
+        color:$primary-txt-clr-dark;
+        font-weight: bold;
+        font-size:1rem;
+    }
+
+    & svg{
+        @include squireGenerator(2rem);
+    }
+
+}
+.logo{
+    @extend .navItem;
+    position: absolute;
+    top: -.1rem;
+    left:5%;
+}
+.menu{
+    @extend .navItem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: .1rem;
+    right:5%;
+    &>span{
+        font-size: 1.8rem;
+        cursor: pointer;
+        &:hover,&:active{
+            color:$primary-btn-clr-dark;
+        }
+    }
+}
+
+.lists{
+    display: none !important;
+    &>a{
+        text-decoration: none !important;
+       
+    }
+   
+}
+.showLists{
+    display: flex !important;
+    flex-direction: column;
+    min-height: 60vh;
+    &>a{
+        text-decoration: none !important;
+       
+    }
+}
+.navWrapper{
+    justify-content: center !important;
+}
+
+@media (prefers-color-scheme:dark){
+    .container{
+        &>div{
+            background-color: transparent;
+            @include gen-linear-gradient($gradiant-color-top,$gradiant-color-bottom);
+        }
+    }
+}
+
+@media only screen and (min-width:769px) {
+ 
+    
+    .container{
+        top:1rem;
+        &>div{
+            width: 80%;
+        border-radius: .4rem;
+        
+    }
+   
+    }
+    .logo{
+        position: static;
+        transform: none;
+    }
+    .lists{
+        display: flex !important;
+        & div:hover{
+            border-bottom: 2px solid $primary-txt-clr-dark;
+        }
+      
+    }
+        .menu{
+            display: none !important;
+        }
+    }
+    
+   
