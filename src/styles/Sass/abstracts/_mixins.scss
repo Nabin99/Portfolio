@@ -24,7 +24,7 @@
     width:$wdth;
     height:$hgt;
 }
-@mixin gen-linear-gradient {
-    background-image: linear-gradient( to bottom right ,$gradiant-color-top,$gradiant-color-bottom);
+@mixin gen-linear-gradient($color1,$color2) {
+    background-image: linear-gradient( to bottom right ,$color1,$color2);
 }
 

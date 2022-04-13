@@ -9,7 +9,8 @@
     &>div{
         // 
         padding:0 .2rem;
-        background-color: $bg-clr-dark;
+        // background-color: $bg-clr-dark;
+         @include gen-linear-gradient($gradiant-color-top,$gradiant-color-bottom);
         @include flex-box-generic(space-between,center,row);
         width: 90%;
         border-radius: .2rem;
@@ -83,7 +84,7 @@
     .container{
         &>div{
             background-color: transparent;
-            @include gen-linear-gradient;
+            @include gen-linear-gradient($gradiant-color-top,$gradiant-color-bottom);
         }
     }
 }
