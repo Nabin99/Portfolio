@@ -1,17 +1,18 @@
 import Section from "../../common/section/section";
-import styles from "./service.module.scss";
+import styles from "./skills.module.scss";
 
 const SkillsSection = () => {
   return (
-      <Section title="My Skillss">
+      <Section title="My Skills">
     <div className={styles.sectionWrapper}>
-      <span>Skillss</span>
+      <span>Skills</span>
       <h2>
-      My Skillss
+      My Skills
       </h2>
       <p>
-        As a Full Stack Developer, <br />
-        I offer full stack software support using different tools like Reactjs,Nextjs,Nodejs,React Native etc.
+        I learnig and growing at the same time.<br />
+        Being a full stack developer, I need to have different skills. <br />
+        Skills that I have currently, are listed below, mean while I learn new skills and grow with every project I do.
       </p>
       <hr />
 
