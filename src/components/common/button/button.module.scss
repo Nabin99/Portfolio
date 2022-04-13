@@ -1,0 +1,25 @@
+@import '../../../styles/Sass/abstracts/variables';
+@import '../../../styles/Sass/abstracts/mixins';
+
+.button{
+    padding:.5rem 1.5rem;
+    font-size: 110%;
+    border: 2px solid $primary-btn-clr-lgt;
+    color:$primary-btn-clr-lgt;
+    border-radius: .3rem;
+    &:hover,&:active{
+        color:$primary-btn-txt-clr-lgt;
+        background-color: $primary-btn-clr-lgt;
+    }
+}
+
+@media (prefers-color-scheme:dark){
+    .button{
+        border-color: $primary-btn-clr-dark;
+        color:$primary-btn-clr-txt-dark;
+        background-color: lighten($paragraph-txt-clr-dark,30%);
+        &:hover,&:active{
+            background-color: $primary-btn-clr-dark;
+        }
+    }
+}

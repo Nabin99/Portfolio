@@ -1,6 +1,10 @@
+import HomeBody from "../components/homebody/homeBody";
+
 const Home = () =>{
     return(
-        <div>Homes </div>
+        <>
+        <HomeBody/>
+        </>
     )
 }
 export default Home;

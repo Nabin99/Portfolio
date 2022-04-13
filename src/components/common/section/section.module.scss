@@ -1,0 +1,32 @@
+@import '../../../styles/Sass/abstracts/variables';
+@import '../../../styles/Sass/abstracts/mixins';
+
+.sections{
+    position: relative;
+    z-index: 0;
+    @include flex-box-generic(center, center, row);
+    
+    &>div{
+        @include flex-box-generic(flex-start, flex-start, column);
+        width: 90%;
+
+    }
+}
+
+.sections:nth-child(even){
+    background-color: rgba(33, 23, 31, 1);
+}
+
+@media (prefers-color-scheme:dark){
+    .sections:nth-child(2){
+        background-color: rgba(33, 23, 31, 0.429);
+    }        
+}
+
+@media only screen and (min-width:769px) {
+    .sections{
+        &>div{
+            width:80%;
+        }
+    }
+}

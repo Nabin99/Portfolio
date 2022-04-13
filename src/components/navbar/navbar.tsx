@@ -27,6 +27,7 @@ import { useEffect, useState } from 'react';
 
 
     return(
+        <header title='Main Navigation Bar'>
         <nav className={styles.container}>
             <div className={displayMenu?styles.navWrapper:undefined}>
                 
@@ -91,6 +92,7 @@ import { useEffect, useState } from 'react';
             </div>
            
         </nav>
+        </header>
     );
 }
 
