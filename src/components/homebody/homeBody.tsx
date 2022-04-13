@@ -1,6 +1,7 @@
-import Skills from "../../pages/skills";
 import HeroSection from "./heroSection";
 import ServiceSection from "./serviceSection/service";
+import SkillsSection from "./skills/skills";
+import WorksSection from "./works/works";
 
 
 const HomeBody = () => {
@@ -8,7 +9,8 @@ const HomeBody = () => {
     <>
     <HeroSection/>
     <ServiceSection/>
-    <Skills/>
+    <SkillsSection/>
+    <WorksSection/>
     </>
   )
 }
