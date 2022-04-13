@@ -18,7 +18,7 @@ const HeroSection = () => {
                 </p>
                 <div className={styles.buttonWrapper}>
                   <Button label='Hire Me' clickHandler={()=>{}}/>
-                  <Button label='Hire Me' clickHandler={()=>{}}/>
+                  <Button label='Download CV' clickHandler={()=>{}}/>
                 </div>
               </div>
               

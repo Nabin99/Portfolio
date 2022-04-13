@@ -1,3 +1,4 @@
+import BlogSection from "./blogSection/blogSection";
 import HeroSection from "./heroSection";
 import ServiceSection from "./serviceSection/service";
 import SkillsSection from "./skills/skills";
@@ -11,6 +12,7 @@ const HomeBody = () => {
     <ServiceSection/>
     <SkillsSection/>
     <WorksSection/>
+    <BlogSection/>
     </>
   )
 }

@@ -16,7 +16,7 @@
         width: 90%;
         border-radius: .2rem;
 
-    min-height: 3rem;
+        min-height: 3rem;
         &>div{
             @include flex-center-row;
         }
