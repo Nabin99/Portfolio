@@ -2,10 +2,11 @@
 @import '../../styles/Sass/abstracts/variables';
 
 .container{
-    position: absolute;
+    position: fixed;
     top:1rem;
     @include flex-center-row;
-    width:100vw;
+    width:100%;
+    z-index: 2;
     &>div{
         // 
         padding:0 .2rem;

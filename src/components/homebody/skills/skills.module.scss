@@ -1,0 +1,30 @@
+@import '../../../styles/Sass/abstracts/variables';
+@import '../../../styles/Sass/abstracts/mixins';
+
+.sectionWrapper{
+    @include flex-box-generic(flex-start,center,column);
+    text-align: center;
+    width:100%;
+    min-height: 100vh;
+
+    &>span{
+        color:$primary-btn-clr-dark;
+        font-weight: bold;
+        margin-top: 4rem;
+    }
+    &>h2{
+        font-family: $heading-font;
+        color:$heading-txt-clr-dark;
+        margin-top: 1rem;
+        font-size: 140%;;
+    }
+    &>p{
+        color:$paragraph-txt-clr-dark;
+        margin-top: 1rem;
+        line-height: 1.5;
+    }
+    &>hr{
+        width:20%;
+        border-color: $primary-btn-clr-dark;
+    }
+}
