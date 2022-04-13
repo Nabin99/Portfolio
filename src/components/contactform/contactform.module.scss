@@ -1,111 +1,109 @@
-.hireForm{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.774);
-    display:flex;
-    transition: all 1s ease-in-out .4s;
-    overflow: hidden;
-    z-index: 2;
+.hireForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.774);
+  display: flex;
+  transition: all 1s ease-in-out 0.4s;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.hireForm>form{
-width:30rem;
-background-color: white;
-border-radius: 1.5rem;
-padding: 2rem;
-position: absolute;
-animation: formAnimate 1s ease-in-out;
-bottom: 50%;
-left:50%;
-transform: translate(-50%,50%);
-transition: all 1s ease-in-out ;
+.hireForm > form {
+  width: 30rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  position: absolute;
+  animation: formAnimate 1s ease-in-out;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  transition: all 1s ease-in-out;
 }
 
-.hireForm .container{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
-color:var(--primary-color-light);
-font-size: 1rem;
+.hireForm .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color-light);
+  font-size: 1rem;
 }
 
-.hireForm .container>div{
-    display: flex;
-    flex-direction: column;
-    width:50%;
-    margin-bottom: 1rem;
+.hireForm .container > div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 1rem;
 }
 
-.hireForm .container>h2{
-    width:100%;
-    text-align: center;
-    font-size: 1.5rem;
-    margin:0px;
-    margin-bottom: 1rem;
-    padding: 0px;
+.hireForm .container > h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0px;
+  margin-bottom: 1rem;
+  padding: 0px;
 }
-.hireForm .container>p{
-    text-align: center;
-    width:100%;
-    margin-bottom: 2rem;
-
+.hireForm .container > p {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
 }
-.hireForm .container>div{
-    width:45%;
+.hireForm .container > div {
+  width: 45%;
 }
 
 .hireForm .container input,
-.hireForm .container textarea{
-    color:black;
-    padding:.5rem;
-    width:100%;
-    border-color: black;
-    border-width:1px;
-    background-color: transparent !important;
-    border: 1px solid transparent;
-    border-bottom-color: black;
-    outline:none !important;
-    transition: all .4s ease-in-out;
+.hireForm .container textarea {
+  color: black;
+  padding: 0.5rem;
+  width: 100%;
+  border-color: black;
+  border-width: 1px;
+  background-color: transparent !important;
+  border: 1px solid transparent;
+  border-bottom-color: black;
+  outline: none !important;
+  transition: all 0.4s ease-in-out;
 }
 
-.hireForm .container textarea{
-    resize: none;
-    overflow-y: auto;
-    height:8rem;
+.hireForm .container textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 8rem;
 }
 
 .hireForm .container input:hover,
 .hireForm .container textarea:focus,
 .hireForm .container input:focus,
-.hireForm .container textarea:hover{
-    border:1px solid black;
-    border-radius: .4rem;
+.hireForm .container textarea:hover {
+  border: 1px solid black;
+  border-radius: 0.4rem;
 }
 
-.hireForm .container>div:nth-child(5),
-.hireForm .container>div:nth-child(6),
-.hireForm .container>div:nth-child(7)
-{
-    width:100%;
+.hireForm .container > div:nth-child(5),
+.hireForm .container > div:nth-child(6),
+.hireForm .container > div:nth-child(7) {
+  width: 100%;
 }
-.hireForm .container>div:nth-child(6),
-.hireForm .container>div:nth-child(7){
-    margin-bottom: 0px;
-}
-
-.hireForm .container>div:nth-child(8){
-    width:100%;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    gap:1rem;
+.hireForm .container > div:nth-child(6),
+.hireForm .container > div:nth-child(7) {
+  margin-bottom: 0px;
 }
 
-.hireForm .container>div:nth-child(8) button{
-    width:50%;
+.hireForm .container > div:nth-child(8) {
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hireForm .container > div:nth-child(8) button {
+  width: 50%;
 }
