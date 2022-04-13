@@ -17,7 +17,8 @@ const FooterSection = () => {
                     </div>
                     <p>
                         Here is the end for the Page. <br />
-                        you can surf further if you like. Thank you.
+                        you can surf further if you like. <br />
+                        Thank you.
                     </p>
                 
              </div>

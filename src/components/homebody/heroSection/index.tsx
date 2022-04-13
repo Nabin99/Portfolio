@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import Button from '../../common/button/button';
 import Section from '../../common/section/section';
+import ContactForm from '../../contactform/contactform';
 import styles from './index.module.scss';
 
 const HeroSection = () => {
+  const [toggleContact,toggleContactSet] = useState(false);
+  const showContact = ()  =>{
+      if(!toggleContact)
+      toggleContactSet(true);
+  }
+  const hideContact = ()  =>{
+    if(toggleContact)
+    toggleContactSet(false);
+}
   return (
+    <>
       <Section title='Hero Section'>
           <div className={styles.contentWrapper}>
               <div>
@@ -17,15 +29,17 @@ const HeroSection = () => {
                 Currently, a Software Engineering Trainee at Optimum Futurist.
                 </p>
                 <div className={styles.buttonWrapper}>
-                  <Button label='Hire Me' clickHandler={()=>{}}/>
+                  <Button label='Hire Me' clickHandler={showContact}/>
                   <Button label='Download CV' clickHandler={()=>{}}/>
                 </div>
               </div>
               
           </div>
       </Section>
+      {toggleContact?<ContactForm  hideForm={hideContact}/>:null}
+    </>
     
   )
 }
 
-export default HeroSection
+export default HeroSection;
