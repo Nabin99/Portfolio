@@ -1,4 +1,5 @@
 import Section from "../common/Section/Section";
+import WorksCard from "../WorksCard/WorksCard";
 import styles from "./WorksSection.module.scss";
 
 const WorksSection = () => {
@@ -15,6 +16,14 @@ const WorksSection = () => {
           Works and grow with every project I do.
         </p>
         <hr />
+        <WorksCard
+          description="this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose this just for text purpose"
+          iconSrc=""
+          imgSrc=""
+          secondaryText="date time"
+          title="Project Name"
+          urlAddress="/#"
+        />
       </div>
     </Section>
   );

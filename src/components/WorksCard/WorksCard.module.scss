@@ -1,0 +1,82 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.cardWrapper {
+    width:250px;
+    height: 300px;
+    background-color: desaturate(darken($bg-clr-lgt,10%),40%);
+    position: relative;
+    border-radius: .4rem;
+    &>.titleWrapper{
+        margin: .2rem 0rem;
+        padding-left: .2rem; 
+        width: 100%;
+        @include flex-box-generic(flex-start,center,row);
+        gap:10px;
+        height: 50px;
+        
+        &>div{
+            @include flex-box-generic(center,flex-start,column)
+        }
+        &>.icons{
+            border-radius:100%;
+            @include squireGenerator(40px);
+            object-fit: cover;
+            @include flex-center-row;
+            border:1px solid black;
+            padding:2px;
+        }
+        &>div>span{
+            font-size: 70%;
+            color:$paragraph-txt-clr-light;
+            @include line-clamp(1);
+        }
+        &>div>h3{
+            font-size: 100%;
+            font-weight: 900;
+            color: $heading-txt-clr-light;
+            @include line-clamp(1);
+        }
+    }
+    &>.imageWrapper{
+        height:140px;
+        object-fit: cover;
+        @include flex-center-row;
+        background-color: grey;
+    }
+    &>p{
+        padding:.2rem .2rem;
+        line-height: 1.4;
+        text-align: left;
+        height:60px;
+        font-size: 90%;
+        @include line-clamp(3);
+        color:darken($paragraph-txt-clr-light,20%);
+    }
+    &>.buttonsWrapper{
+        height:52px;
+        width:50%;
+        margin: auto;
+        @include flex-center-row;
+    }
+}
+
+@media (prefers-color-scheme:dark){
+    .cardWrapper{
+        background-color: desaturate($bg-clr-dark,60%);
+        &>.titleWrapper{
+            &>.icons{
+                border-color: grey;
+            }
+            &>div>span{
+                color:$paragraph-txt-clr-dark;
+            }
+            &>div>h3{
+                color: $heading-txt-clr-dark;
+            }
+        }
+        &>p{
+            color:$paragraph-txt-clr-dark;
+        }
+    }
+}
