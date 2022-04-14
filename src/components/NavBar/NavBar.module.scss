@@ -86,7 +86,7 @@
   }
 }
 
-@media only screen and (min-width: 769px) {
+@include Screen-size-medium {
   .container {
     top: 1rem;
     & > div {

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Button from "../common/Button/Button";
+import InputBox from "../common/InputBox/InputBox";
+import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
 import styles from "./contactform.module.scss";
 
 interface ContactFormTypes {
@@ -7,18 +9,18 @@ interface ContactFormTypes {
 }
 
 const ContactForm = ({ hideForm }: ContactFormTypes) => {
-  const [firstName, firsNameSet] = useState("");
+  const [firstName, firstNameSet] = useState("");
   const [lastName, lastNameSet] = useState("");
   const [email, emailSet] = useState("");
   const [message, messageSet] = useState("");
 
   const clearForm = () => {
-    firsNameSet("");
+    firstNameSet("");
     lastNameSet("");
     emailSet("");
     messageSet("");
   };
-  const Submit = () => {
+  const submit = () => {
     console.log(firstName, lastName, email, message);
   };
   return (
@@ -28,54 +30,45 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
           <h2>Contact Me</h2>
           <p>Please fill in this form so that I can contact you.</p>
 
-          <div>
-            <label htmlFor="firstName">
-              <b>First Name:</b>
-            </label>
-            <input
-              type="text"
-              placeholder="Enter First Name...."
-              name="firstName"
-              required
-            />
-          </div>
+          <InputBox
+            label="First Name"
+            name="firstName"
+            placeholder="Please enter first name here..."
+            type="text"
+            setValue={firstNameSet}
+            error={false}
+            value={firstName}
+          />
+          <InputBox
+            label="Last Name"
+            name="lastName"
+            placeholder="Please enter last name here..."
+            type="text"
+            setValue={lastNameSet}
+            error={false}
+            value={lastName}
+          />
 
-          <div>
-            <label htmlFor="lastName">
-              <b>Last Name:</b>
-            </label>
-            <input
-              type="text"
-              placeholder="Enter Last Name...."
-              name="lastName"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email">
-              <b>Email:</b>
-            </label>
-            <input
-              type="email"
-              placeholder="Enter Email...."
-              name="email"
-              required
-            />
-          </div>
+          <InputBox
+            label="Email"
+            name="emial"
+            placeholder="Please enter email here..."
+            type="email"
+            setValue={emailSet}
+            error={false}
+            value={email}
+          />
 
+          <TextAreaBox
+            error={false}
+            label="Leave your Message"
+            name="message"
+            placeholder="Please leave your message here..."
+            setValue={messageSet}
+            value={message}
+          />
           <div>
-            <label htmlFor="message">
-              <b>Write a message:</b>
-            </label>
-            <textarea
-              id="message"
-              placeholder="Enter message here....."
-              name="message"
-              required
-            ></textarea>
-          </div>
-          <div>
-            <Button label="Submit" clickHandler={Submit} />
+            <Button label="Submit" clickHandler={submit} />
           </div>
 
           <div>
