@@ -26,3 +26,8 @@
 @mixin gen-linear-gradient($color1, $color2) {
   background-image: linear-gradient(to bottom right, $color1, $color2);
 }
+@mixin Screen-size-medium {
+  @media only screen and (min-width: 769px) {
+    @content;
+  }
+}

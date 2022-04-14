@@ -7,7 +7,13 @@ interface ButtonTypes {
 
 const Button = ({ label, clickHandler }: ButtonTypes) => {
   return (
-    <button onClick={clickHandler} className={styles.button}>
+    <button
+      onClick={(e) => {
+        e.preventDefault();
+        clickHandler();
+      }}
+      className={styles.button}
+    >
       <div>
         <span>{label}</span>
       </div>

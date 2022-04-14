@@ -34,9 +34,9 @@ const SvgProvider = {
           width="500"
           height="504.644"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -70,8 +70,8 @@ const SvgProvider = {
           y2="1008.37"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#86CACA" />
-          <stop offset="1" stop-color="#AA84C8" />
+          <stop stopColor="#86CACA" />
+          <stop offset="1" stopColor="#AA84C8" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_25_3"
@@ -81,8 +81,8 @@ const SvgProvider = {
           y2="1008.37"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#86CACA" />
-          <stop offset="1" stop-color="#AA84C8" />
+          <stop stopColor="#86CACA" />
+          <stop offset="1" stopColor="#AA84C8" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_25_3"
@@ -92,8 +92,8 @@ const SvgProvider = {
           y2="1008.37"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#86CACA" />
-          <stop offset="1" stop-color="#AA84C8" />
+          <stop stopColor="#86CACA" />
+          <stop offset="1" stopColor="#AA84C8" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_25_3"
@@ -103,8 +103,8 @@ const SvgProvider = {
           y2="1066"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#86CACA" />
-          <stop offset="1" stop-color="#AA84C8" />
+          <stop stopColor="#86CACA" />
+          <stop offset="1" stopColor="#AA84C8" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_25_3"
@@ -114,8 +114,8 @@ const SvgProvider = {
           y2="1042"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#86CACA" />
-          <stop offset="1" stop-color="#AA84C8" />
+          <stop stopColor="#86CACA" />
+          <stop offset="1" stopColor="#AA84C8" />
         </linearGradient>
       </defs>
     </svg>
