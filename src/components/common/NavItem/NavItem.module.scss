@@ -1,0 +1,12 @@
+@import "../../../styles/Sass/abstracts/variables";
+@import "../../../styles/Sass/abstracts/mixins";
+
+.navItem {
+  @include flex-box-generic(space-evenly, center, row);
+  padding: 0.6rem 1rem;
+  color: $primary-txt-clr-dark;
+  & > span {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
