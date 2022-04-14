@@ -68,7 +68,7 @@
 .showLists {
   display: flex !important;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 25rem;
   & > a {
     text-decoration: none !important;
   }
@@ -101,7 +101,8 @@
   .lists {
     display: flex !important;
     & div:hover {
-      border-bottom: 2px solid $primary-txt-clr-dark;
+      color: $primary-btn-clr-dark;
+      border-bottom: 2px solid $primary-btn-clr-dark;
     }
   }
   .menu {

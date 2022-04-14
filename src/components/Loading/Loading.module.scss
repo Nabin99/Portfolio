@@ -3,7 +3,7 @@
 
 .container {
   @include full-size(100vw, 100vh);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   overflow: hidden;
