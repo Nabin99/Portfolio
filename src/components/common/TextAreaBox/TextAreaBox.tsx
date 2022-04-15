@@ -7,6 +7,7 @@ interface TextAreaBoxTypes {
   setValue: React.Dispatch<string>;
   error: boolean;
   value: string;
+  errorMsg: string;
 }
 
 const TextAreaBox = ({
@@ -16,6 +17,7 @@ const TextAreaBox = ({
   setValue,
   error = false,
   value,
+  errorMsg,
 }: TextAreaBoxTypes) => {
   return (
     <div
@@ -37,6 +39,7 @@ const TextAreaBox = ({
         onChange={(e) => setValue(e.target.value)}
         required
       />
+      <span className={styles.error}>{errorMsg}</span>
     </div>
   );
 };

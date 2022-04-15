@@ -1,0 +1,97 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.cardWrapper {
+  width: 250px;
+  height: 300px;
+  background-color: desaturate(darken($bg-clr-lgt, 10%), 40%);
+  position: relative;
+  border-radius: 0.4rem;
+  transition: all 0.4s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+  & > .titleWrapper {
+    margin: 0.2rem 0rem;
+    padding-left: 0.2rem;
+    width: 100%;
+    @include flex-box-generic(flex-start, center, row);
+    gap: 10px;
+    height: 50px;
+
+    & > div {
+      @include flex-box-generic(center, flex-start, column);
+    }
+    & > .icons {
+      border-radius: 0.2rem;
+      @include squireGenerator(40px);
+      @include flex-center-row;
+      border: 1px solid black;
+      padding: 2px;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    & > div > span {
+      padding-top: 0.2rem;
+      font-size: 60%;
+      color: $paragraph-txt-clr-light;
+      @include line-clamp(1);
+    }
+    & > div > h3 {
+      font-size: 100%;
+      font-weight: 900;
+      color: $heading-txt-clr-light;
+      @include line-clamp(1);
+    }
+  }
+  & > .imageWrapper {
+    height: 140px;
+    @include flex-center-row;
+    background-color: grey;
+    overflow: hidden;
+    position: relative;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & > p {
+    padding: 0.2rem 0.2rem;
+    line-height: 1.4;
+    text-align: left;
+    height: 60px;
+    font-size: 90%;
+    @include line-clamp(3);
+    color: darken($paragraph-txt-clr-light, 20%);
+  }
+  & > .buttonsWrapper {
+    height: 46px;
+    width: 50%;
+    margin: auto;
+    @include flex-center-row;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cardWrapper {
+    background-color: desaturate($bg-clr-dark, 60%);
+    & > .titleWrapper {
+      & > .icons {
+        border-color: grey;
+      }
+      & > div > span {
+        color: $paragraph-txt-clr-dark;
+      }
+      & > div > h3 {
+        color: $heading-txt-clr-dark;
+      }
+    }
+    & > p {
+      color: $paragraph-txt-clr-dark;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../styles/Sass/abstracts/variables";
+@import "../../../styles/Sass/abstracts/mixins";
+
+.linkButton {
+  padding: 0.5rem 1.5rem;
+  font-size: 80%;
+  border: 1px solid $primary-btn-clr-lgt;
+  color: $primary-btn-clr-lgt;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  text-decoration: none;
+  width: 100%;
+  &:hover,
+  &:active {
+    color: $primary-btn-txt-clr-lgt;
+    background-color: $primary-btn-clr-lgt;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .linkButton {
+    border-color: $primary-btn-clr-dark;
+    color: $primary-btn-clr-dark;
+    background-color: transparent;
+    &:hover,
+    &:active {
+      background-color: $primary-btn-clr-dark;
+      color: $bg-clr-dark;
+    }
+  }
+}

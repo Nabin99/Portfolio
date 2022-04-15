@@ -6,6 +6,10 @@
   flex-direction: column;
   width: 100%;
   gap: 0.5rem;
+  position: relative;
+  & > span {
+    display: none;
+  }
   & > label {
     color: $paragraph-txt-clr-light;
   }
@@ -22,6 +26,22 @@
     &:focus {
       border-color: $primary-btn-clr-lgt;
     }
+  }
+}
+.error {
+  & > input {
+    border-color: $error-color;
+    color: $error-color;
+  }
+
+  & > span {
+    display: inline;
+    position: absolute;
+    color: $error-color;
+    font-size: 50%;
+    text-align: right;
+    bottom: -0.5rem;
+    right: 0rem;
   }
 }
 
