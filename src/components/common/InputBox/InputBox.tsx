@@ -9,6 +9,7 @@ interface InputBoxTypes {
   setValue: React.Dispatch<string>;
   error: boolean;
   value: string;
+  errorMsg: string;
 }
 
 const InputBox = ({
@@ -19,6 +20,7 @@ const InputBox = ({
   setValue,
   error = false,
   value,
+  errorMsg,
 }: InputBoxTypes) => {
   return (
     <div
@@ -41,6 +43,7 @@ const InputBox = ({
         onChange={(e) => setValue(e.target.value)}
         required
       />
+      <span>{errorMsg}</span>
     </div>
   );
 };

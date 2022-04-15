@@ -29,3 +29,10 @@
     border-color: $primary-btn-clr-dark;
   }
 }
+
+.worksCardContainer{
+  margin: 4rem 0rem;
+  @include flex-box-generic(center,center,row);
+  flex-wrap: wrap;
+  gap:2rem;
+}

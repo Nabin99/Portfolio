@@ -1,38 +1,42 @@
 import CardsLink from "../common/CardsLink/CardsLink";
 import styles from "./WorksCard.module.scss";
+import image from "../../assets/png/workfallbackimg.png";
+import logo from "../../assets/png/logo.png";
 
 interface WorksCardTypes {
   title: string;
-  secondaryText: string;
-  imgSrc: string;
+  createdAt: string;
+  imgSrc?: string;
   description: string;
   urlAddress: string;
-  iconSrc: string;
+  iconSrc?: string;
 }
 
 const WorksCard = ({
   title,
-  secondaryText,
-  imgSrc,
+  createdAt,
+  imgSrc = "",
   description,
   urlAddress,
-  iconSrc,
+  iconSrc = "",
 }: WorksCardTypes) => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.titleWrapper}>
         <div className={styles.icons}>
-          <img src={iconSrc} alt="icon" />
+          <img src={iconSrc === "" ? logo : iconSrc} alt="icon" />
         </div>
         <div>
-          <h3 title={title}>{title}</h3>
-          <span>{secondaryText}</span>
+          <h3 title={title}>{title.toUpperCase()}</h3>
+          <span>{new Date(createdAt).toDateString()}</span>
         </div>
       </div>
       <div className={styles.imageWrapper}>
-        <img src={imgSrc} alt={title + " image"} />
+        <img src={imgSrc === "" ? image : imgSrc} alt={title + " image"} />
       </div>
-      <p>{description}</p>
+      <p>
+        {description ? description : "This project doesn't have an description"}
+      </p>
       <div className={styles.buttonsWrapper}>
         <CardsLink label="Go to GitHub" urlAddress={urlAddress} />
       </div>

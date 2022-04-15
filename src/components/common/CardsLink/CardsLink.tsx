@@ -8,7 +8,13 @@ const CardsLink = ({
   label: string;
 }) => {
   return (
-    <a className={styles.linkButton} href={urlAddress} target="_blank" title={label}>
+    <a
+      className={styles.linkButton}
+      rel="noreferrer"
+      href={urlAddress}
+      target="_blank"
+      title={label}
+    >
       {label}
     </a>
   );
