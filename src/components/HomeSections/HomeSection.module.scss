@@ -1,0 +1,126 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.sectionWrapper {
+  @include flex-box-generic(flex-start, center, column);
+  text-align: center;
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  padding: 4rem 0rem;
+
+  & > span {
+    color: $primary-btn-clr-lgt;
+    font-weight: bold;
+    margin-top: 4rem;
+  }
+  & > div > h2 {
+    font-family: $heading-font;
+    color: $heading-txt-clr-light;
+    margin-top: 1rem;
+    font-size: 140%;
+  }
+  & > div > p {
+    color: $paragraph-txt-clr-light;
+    margin-top: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  & > hr {
+    margin-top: 1rem;
+    width: 20%;
+    border: none;
+    border-bottom: 3px solid $primary-btn-clr-lgt;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sectionWrapper {
+    & > span {
+      color: $primary-btn-clr-dark;
+    }
+    & > div > h2 {
+      color: $heading-txt-clr-dark;
+    }
+    & > div > p {
+      color: $paragraph-txt-clr-dark;
+    }
+    & > hr {
+      border-color: $primary-btn-clr-dark;
+    }
+  }
+}
+
+@include Screen-size-medium {
+  .sectionWrapper {
+    flex-direction: column;
+    gap: 2rem;
+    & > span,
+    & > hr {
+      position: absolute;
+      top: 1rem;
+      right: 0rem;
+    }
+    & > span {
+      margin: 0;
+      top: 0rem;
+    }
+
+    & > div {
+      @include flex-center-row;
+      border-radius: 0.6rem;
+      align-items: stretch;
+    }
+    & > .infoWrapper {
+      width: 100%;
+      gap: 2rem;
+    }
+    & > .contentWrapper {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      min-height: 50vh;
+    }
+
+    & > div > h2,
+    & > div > p {
+      @include flex-center-row;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 2rem 1rem;
+      border-radius: 0.4rem;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .sectionWrapper {
+      & > div > h2,
+      & > div > p,
+      & > .contentWrapper {
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+    }
+  }
+}
+
+@include Screen-size-large {
+  .sectionWrapper {
+    flex-direction: row;
+    align-items: stretch;
+    & > div {
+      @include flex-center-column;
+    }
+    & > .infoWrapper {
+      width: 25%;
+      gap: 2rem;
+    }
+    & > .contentWrapper {
+      width: 75%;
+      min-height: 50vh;
+    }
+    & > div > h2,
+    & > div > p {
+      padding: 4rem 1rem;
+    }
+  }
+}

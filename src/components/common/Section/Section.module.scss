@@ -8,7 +8,7 @@
 
   & > div {
     @include flex-box-generic(flex-start, flex-start, column);
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -22,10 +22,29 @@
 //   }
 // }
 
-@media only screen and (min-width: 769px) {
+@include Screen-size-medium {
   .sections {
     & > div {
       width: 80%;
+    }
+    &:nth-child(even) > div > div {
+      & > span,
+      & > hr {
+        right: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+@include Screen-size-large {
+  .sections {
+    &:nth-child(even) > div > div {
+      flex-direction: row-reverse;
+      & > span,
+      & > hr {
+        right: 100%;
+        left: 0;
+      }
     }
   }
 }

@@ -11,7 +11,7 @@
     transition: all 0.5s ease;
   }
   &:hover > svg {
-    fill: $primary-btn-clr-dark;
+    fill: saturate(lighten($primary-btn-clr-dark, 10%), 20%);
     transform: scale(1.2);
   }
 }

@@ -59,10 +59,7 @@
     & > textarea,
     & > input {
       color: $paragraph-txt-clr-dark;
-      background-color: desaturate(
-        lighten($bg-clr-dark, $amount: 5%),
-        $amount: 60%
-      );
+      background-color: desaturate(lighten($bg-clr-dark, $amount: 20%), 95%);
       &:hover,
       &:focus {
         border-color: $primary-btn-clr-dark;

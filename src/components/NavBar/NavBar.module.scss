@@ -13,7 +13,7 @@
     // background-color: $bg-clr-dark;
     @include gen-linear-gradient($gradiant-color-top, $gradiant-color-bottom);
     @include flex-box-generic(space-between, center, row);
-    width: 90%;
+    width: 95%;
     border-radius: 0.2rem;
 
     min-height: 3rem;
@@ -40,7 +40,7 @@
   @extend .navItem;
   position: absolute;
   top: -0.1rem;
-  left: 5%;
+  left: 2%;
 }
 .menu {
   @extend .navItem;
@@ -48,7 +48,7 @@
   align-items: center;
   position: absolute;
   top: 0.1rem;
-  right: 5%;
+  right: 2%;
   & > span {
     font-size: 1.8rem;
     cursor: pointer;

@@ -40,18 +40,24 @@
   }
 }
 
+@mixin Screen-size-large {
+  @media only screen and (min-width: 1231px) {
+    @content;
+  }
+}
+
 @mixin bg-gradient-light {
   background-image: linear-gradient(
     to right bottom,
-    saturate(lighten($bg-clr-lgt, 3%), 90%),
-    desaturate(lighten($bg-clr-dark, 90%), 40%)
+    saturate(lighten($bg-clr-lgt, 3%), 30%),
+    desaturate(lighten($bg-clr-dark, 90%), 80%)
   );
 }
 
 @mixin bg-gradient-dark {
   background-image: linear-gradient(
     to right bottom,
-    desaturate(darken($bg-clr-lgt, 84%), 0%),
-    desaturate(lighten($bg-clr-dark, 2%), 0%)
+    desaturate(darken($bg-clr-lgt, 72%), 30%),
+    desaturate(lighten($bg-clr-dark, 15%), 92%)
   );
 }
