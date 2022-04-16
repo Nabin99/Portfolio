@@ -4,6 +4,7 @@
 .contentWrapper {
   height: 100vh;
   @include flex-box-generic(center, center, row);
+  position: relative;
 
   & > div > h1 {
     font-family: $heading-font;
@@ -19,6 +20,12 @@
     & > button {
       margin: 0rem 2rem 2rem 0rem;
     }
+  }
+  & .iconWrapper {
+    @include flex-center-row;
+    position: absolute;
+    bottom: 0;
+    left: -0.5rem;
   }
 }
 

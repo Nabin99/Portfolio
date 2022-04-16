@@ -3,6 +3,8 @@ import Button from "../common/Button/Button";
 import Section from "../common/Section/Section";
 import ContactForm from "../contactform/contactform";
 import styles from "./HeroSection.module.scss";
+import SvgIcon from "../common/SvgIcon/SvgIcon";
+import SvgProvider from "../../constants/SvgProvider";
 
 const HeroSection = () => {
   const [toggleContact, toggleContactSet] = useState(false);
@@ -30,6 +32,13 @@ const HeroSection = () => {
             <div className={styles.buttonWrapper}>
               <Button label="Hire Me" clickHandler={showContact} />
               <Button label="Download CV" clickHandler={() => {}} />
+            </div>
+            <div className={styles.iconWrapper}>
+              <SvgIcon title="Instagram Icon">{SvgProvider.instagram}</SvgIcon>
+              <SvgIcon title="Facebook Icon">{SvgProvider.facebook}</SvgIcon>
+              <SvgIcon title="Twitter Icon">{SvgProvider.twitter}</SvgIcon>
+              <SvgIcon title="LinkedIn Icon">{SvgProvider.linkedin}</SvgIcon>
+              <SvgIcon title="GitHub Icon">{SvgProvider.github}</SvgIcon>
             </div>
           </div>
         </div>
