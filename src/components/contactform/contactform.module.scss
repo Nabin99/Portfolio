@@ -9,19 +9,16 @@
   background-color: rgba(0, 0, 0, 0.8);
   overflow: auto;
   z-index: 2;
-  padding: 2rem;
+  @include flex-center-row;
   & > form {
     width: 96%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     // background-color: $bg-clr-lgt;
     @include bg-gradient-light;
     border-radius: 0.5rem;
     transition: all 1s ease-in-out;
     @include flex-center-row;
     padding: 2rem 0;
+    object-position: top;
   }
 
   & > form > .container {
