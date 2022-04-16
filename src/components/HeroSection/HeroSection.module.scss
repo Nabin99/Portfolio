@@ -5,6 +5,7 @@
   height: 100vh;
   @include flex-box-generic(center, center, row);
   position: relative;
+  margin-bottom: 4rem;
 
   & > div > h1 {
     font-family: $heading-font;
