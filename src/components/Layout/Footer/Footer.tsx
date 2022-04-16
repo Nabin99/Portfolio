@@ -33,7 +33,7 @@ const FooterSection = () => {
             <br />
             <small>
               &copy; Copyright {new Date().getFullYear()} Nabin Dhital. All
-              Rights Reserved
+              Rights Reserved.
             </small>
           </p>
         </div>
