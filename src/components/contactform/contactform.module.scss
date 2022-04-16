@@ -16,7 +16,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $bg-clr-lgt;
+    // background-color: $bg-clr-lgt;
+    @include bg-gradient-light;
     border-radius: 0.5rem;
     transition: all 1s ease-in-out;
     @include flex-center-row;
@@ -58,6 +59,9 @@
     width: 100%;
   }
 }
+.hireForm .container > div:nth-child(7) {
+  margin-top: 1rem;
+}
 
 .hireForm .container > div:nth-child(8) {
   @include flex-box-generic(space-between, center, row);
@@ -71,7 +75,8 @@
   .hireForm {
     background-color: rgba(255, 255, 255, 0.282);
     & > form {
-      background-color: $bg-clr-dark;
+      // background-color: $bg-clr-dark;
+      @include bg-gradient-dark;
     }
     .container {
       & > h2 {

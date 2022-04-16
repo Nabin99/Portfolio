@@ -1,0 +1,72 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  position: relative;
+  & > span {
+    display: none;
+  }
+  & > label {
+    color: $paragraph-txt-clr-light;
+  }
+  & > textarea,
+  & > input {
+    color: $paragraph-txt-clr-light;
+    padding: 0.8rem;
+    width: 100%;
+    background-color: darken($bg-clr-lgt, 2%);
+    border: 2px solid transparent;
+    outline: none !important;
+    transition: all 0.4s ease-in-out;
+    border-radius: 0.4rem;
+    &:hover,
+    &:active {
+      border-color: $primary-btn-clr-lgt;
+    }
+  }
+  & > textarea {
+    resize: none;
+    overflow-y: auto;
+    height: 8rem;
+  }
+}
+
+.error {
+  & > textarea,
+  & > input {
+    border-color: $error-color;
+  }
+  & > span {
+    display: inline;
+    position: absolute;
+    color: $error-color;
+    font-size: 70%;
+    text-align: right;
+    bottom: -1rem;
+    right: 0rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .inputWrapper {
+    & > label {
+      color: $paragraph-txt-clr-dark;
+    }
+    & > textarea,
+    & > input {
+      color: $paragraph-txt-clr-dark;
+      background-color: desaturate(
+        lighten($bg-clr-dark, $amount: 5%),
+        $amount: 60%
+      );
+      &:hover,
+      &:focus {
+        border-color: $primary-btn-clr-dark;
+      }
+    }
+  }
+}

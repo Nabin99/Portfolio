@@ -27,10 +27,10 @@
   background-image: linear-gradient(to bottom right, $color1, $color2);
 }
 
-@mixin line-clamp ($lines){
+@mixin line-clamp($lines) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -40,4 +40,18 @@
   }
 }
 
+@mixin bg-gradient-light {
+  background-image: linear-gradient(
+    to right bottom,
+    saturate(lighten($bg-clr-lgt, 3%), 90%),
+    desaturate(lighten($bg-clr-dark, 90%), 40%)
+  );
+}
 
+@mixin bg-gradient-dark {
+  background-image: linear-gradient(
+    to right bottom,
+    desaturate(darken($bg-clr-lgt, 84%), 0%),
+    desaturate(lighten($bg-clr-dark, 2%), 0%)
+  );
+}

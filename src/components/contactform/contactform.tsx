@@ -3,6 +3,7 @@ import {
   emailValidator,
   messageValidator,
   nameValidator,
+  lastNameValidator,
 } from "../../utils/formValidators/fomValidators";
 import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
@@ -36,6 +37,37 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
       emailError: false,
       messageError: false,
     });
+  };
+
+  const validateFirstName = (value: string) => {
+    if (!nameValidator(value)) {
+      errorSet((pre) => ({ ...pre, firstNameError: true }));
+    } else {
+      errorSet((pre) => ({ ...pre, firstNameError: false }));
+    }
+  };
+
+  const validatelastName = (value: string) => {
+    if (!lastNameValidator(value)) {
+      errorSet((pre) => ({ ...pre, lastNameError: true }));
+    } else {
+      errorSet((pre) => ({ ...pre, lastNameError: false }));
+    }
+  };
+
+  const validateEmail = (value: string) => {
+    if (!emailValidator(value)) {
+      errorSet((pre) => ({ ...pre, emailError: true }));
+    } else {
+      errorSet((pre) => ({ ...pre, emailError: false }));
+    }
+  };
+  const validateMessage = (value: string) => {
+    if (!messageValidator(value)) {
+      errorSet((pre) => ({ ...pre, messageError: true }));
+    } else {
+      errorSet((pre) => ({ ...pre, messageError: false }));
+    }
   };
 
   const submit = () => {
@@ -76,7 +108,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
       <form name="contact">
         <div className={styles.container}>
           <h2>Contact Me</h2>
-          <p>Please fill in this form so that I can contact you.</p>
+          <p>Please fill in this form so that I can contact you back.</p>
 
           <InputBox
             label="First Name"
@@ -84,6 +116,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
             placeholder="Please enter first name here..."
             type="text"
             setValue={firstNameSet}
+            validateInput={validateFirstName}
             error={error.firstNameError}
             value={firstName}
             errorMsg="please enter a valid first name."
@@ -93,6 +126,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
             name="lastName"
             placeholder="Please enter last name here..."
             type="text"
+            validateInput={validatelastName}
             setValue={lastNameSet}
             error={error.lastNameError}
             value={lastName}
@@ -101,9 +135,10 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
           <InputBox
             label="Email"
-            name="emial"
+            name="email"
             placeholder="Please enter email here..."
             type="email"
+            validateInput={validateEmail}
             setValue={emailSet}
             error={error.emailError}
             value={email}
@@ -115,6 +150,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
             label="Message"
             name="message"
             placeholder="Please leave your message here..."
+            validateInput={validateMessage}
             setValue={messageSet}
             value={message}
             errorMsg="please enter a proper message."

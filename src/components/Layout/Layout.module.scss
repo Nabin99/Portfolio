@@ -1,13 +1,16 @@
 @import "../../styles/Sass/abstracts/variables";
-@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
 
 .main {
-  background-color: $bg-clr-lgt;
   min-height: 100vh;
+  @include bg-gradient-light;
 }
 
 @media (prefers-color-scheme: dark) {
   .main {
-    background-color: $bg-clr-dark;
+    @include bg-gradient-dark;
+    & img {
+      filter: brightness(0.6) contrast(1.2);
+    }
   }
 }

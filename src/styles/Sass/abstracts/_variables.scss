@@ -1,25 +1,25 @@
 // color variables definations
 
-$bg-clr-lgt: rgb(238, 250, 252);
+$bg-clr-lgt: rgb(223, 237, 240);
 $bg-clr-dark: #0e0014;
 
 $primary-txt-clr-lgt: #594f61;
 $primary-txt-clr-dark: #acc3c1;
 
-$heading-txt-clr-dark: #8ea2a2;
+$heading-txt-clr-dark: #84a1a1;
 $heading-txt-clr-light: #504c54;
-$paragraph-txt-clr-light: #7a7281;
-$paragraph-txt-clr-dark: #69676b;
+$paragraph-txt-clr-light: #64837e;
+$paragraph-txt-clr-dark: #574f58;
 
-$primary-btn-clr-lgt: #574862;
-$primary-btn-clr-dark: #86caca;
+$primary-btn-clr-lgt: #3f275f;
+$primary-btn-clr-dark: desaturate(darken(#86caca, 30%), 10%);
 $primary-btn-txt-clr-lgt: white;
 $primary-btn-clr-txt-dark: #06002e;
 
 $gradiant-color-top: #1f2929;
 $gradiant-color-bottom: #271f2f;
 
-$error-color: rgb(203, 26, 26) !important;
+$error-color: rgb(189, 27, 27) !important;
 
 /////////////////////////////////
 
