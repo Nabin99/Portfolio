@@ -15,11 +15,7 @@ const Layout = ({ children }: layoutTypes) => {
     let id = setTimeout(() => {
       displayLoadingSet(false);
     }, 1000);
-    // console.log('loading');
-    // window.addEventListener('load',()=>{
-    //     console.log('test');
-    //     displayLoadingSet(false);
-    // })
+
     return () => {
       clearTimeout(id);
     };

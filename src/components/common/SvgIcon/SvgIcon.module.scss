@@ -2,15 +2,16 @@
 @import "../../../styles/Sass/abstracts/mixins";
 
 .imageWrapper {
-    @include flex-center-row;
-    cursor: pointer;
+  @include flex-center-row;
+  cursor: pointer;
   & > svg {
     @include squireGenerator(2rem);
     fill: $heading-txt-clr-dark;
-    margin: 1rem .5rem;
-    &:hover {
-      fill: $primary-btn-clr-dark;
-      transform: scale(1.2);
-    }
+    margin: 1rem 0.5rem;
+    transition: all 0.5s ease;
+  }
+  &:hover > svg {
+    fill: $primary-btn-clr-dark;
+    transform: scale(1.2);
   }
 }

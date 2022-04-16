@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./InputBox.module.scss";
 
 interface InputBoxTypes {
@@ -7,6 +6,9 @@ interface InputBoxTypes {
   placeholder: string;
   name: string;
   setValue: React.Dispatch<string>;
+  validateInput: {
+    (value: string): void;
+  };
   error: boolean;
   value: string;
   errorMsg: string;
@@ -18,6 +20,7 @@ const InputBox = ({
   placeholder,
   name,
   setValue,
+  validateInput,
   error = false,
   value,
   errorMsg,
@@ -40,7 +43,10 @@ const InputBox = ({
         id={name}
         value={value}
         onBlur={(e) => setValue(e.target.value.trim())}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          setValue(e.target.value);
+          validateInput(e.target.value);
+        }}
         required
       />
       <span>{errorMsg}</span>

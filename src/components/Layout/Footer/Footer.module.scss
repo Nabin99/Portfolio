@@ -2,9 +2,9 @@
 @import "../../../styles/Sass/abstracts/mixins";
 
 .footer {
-  background-color: $bg-clr-lgt;
+  @include bg-gradient-dark;
   & > section {
-    background-color: rgba(33, 23, 31, 1);
+    //@include gen-linear-gradient($gradiant-color-top, $gradiant-color-bottom);
     padding: 2rem 0rem;
   }
 }
@@ -19,21 +19,25 @@
     font-size: 200%;
     gap: 1rem;
     color: $heading-txt-clr-dark;
+
+    margin-bottom: 2rem;
     & > svg {
       @include squireGenerator(2rem);
     }
   }
   & p {
-    margin-top: 2rem;
     color: $paragraph-txt-clr-dark;
+    & > small {
+      font-size: 75%;
+    }
   }
 }
 .iconsWrapper {
   @include flex-center-row;
 }
 
-@media (prefers-color-scheme: dark) {
-  .footer {
-    background-color: $bg-clr-dark;
-  }
+.heart {
+  color: red;
+  font-size: 100%;
+  vertical-align: middle;
 }

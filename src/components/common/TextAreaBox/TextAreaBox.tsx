@@ -5,6 +5,9 @@ interface TextAreaBoxTypes {
   placeholder: string;
   name: string;
   setValue: React.Dispatch<string>;
+  validateInput: {
+    (e: string): void;
+  };
   error: boolean;
   value: string;
   errorMsg: string;
@@ -15,6 +18,7 @@ const TextAreaBox = ({
   placeholder,
   name,
   setValue,
+  validateInput,
   error = false,
   value,
   errorMsg,
@@ -36,7 +40,10 @@ const TextAreaBox = ({
         id={name}
         value={value}
         onBlur={(e) => setValue(e.target.value.trim())}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          setValue(e.target.value);
+          validateInput(e.target.value);
+        }}
         required
       />
       <span className={styles.error}>{errorMsg}</span>

@@ -1,4 +1,5 @@
 import Section from "../common/Section/Section";
+import ServiceCard from "../ServiceCard/ServiceCard";
 import styles from "./ServiceSection.module.scss";
 
 const ServiceSection = () => {
@@ -12,6 +13,9 @@ const ServiceSection = () => {
           using different tools like Reactjs,Nextjs,Nodejs,React Native etc.
         </p>
         <hr />
+        <div className="serviceCard">
+          <ServiceCard description="" icon={<></>} title="" />
+        </div>
       </div>
     </Section>
   );
