@@ -1,0 +1,10 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.cardWrapper {
+  @include flex-box-generic(center, stretch, row);
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}

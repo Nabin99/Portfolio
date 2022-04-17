@@ -1,9 +1,5 @@
 import styles from "./Button.module.scss";
-
-interface ButtonTypes {
-  label: string;
-  clickHandler: () => void;
-}
+import { ButtonTypes } from "../../../types/types";
 
 const Button = ({ label, clickHandler }: ButtonTypes) => {
   return (

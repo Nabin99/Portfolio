@@ -7,20 +7,26 @@
   width: 100%;
   min-height: 80vh;
   position: relative;
-  padding: 4rem 0rem;
+  padding: 6rem 0rem;
 
   & > span {
     color: $primary-btn-clr-lgt;
     font-weight: bold;
-    margin-top: 4rem;
   }
   & > div > h2 {
     font-family: $heading-font;
     color: $heading-txt-clr-light;
     margin-top: 1rem;
     font-size: 140%;
+    @include flex-center-column;
+    & > svg {
+      @include squireGenerator(4rem);
+      fill: $heading-txt-clr-light;
+      margin: 1rem;
+    }
   }
   & > div > p {
+    @include flex-center-column;
     color: $paragraph-txt-clr-light;
     margin-top: 1rem;
     line-height: 1.5;
@@ -28,7 +34,7 @@
   }
   & > hr {
     margin-top: 1rem;
-    width: 20%;
+    width: 24%;
     border: none;
     border-bottom: 3px solid $primary-btn-clr-lgt;
   }
@@ -41,6 +47,9 @@
     }
     & > div > h2 {
       color: $heading-txt-clr-dark;
+      & > svg {
+        fill: $heading-txt-clr-dark;
+      }
     }
     & > div > p {
       color: $paragraph-txt-clr-dark;
@@ -58,12 +67,12 @@
     & > span,
     & > hr {
       position: absolute;
-      top: 1rem;
+      top: 3rem;
       right: 0rem;
     }
     & > span {
       margin: 0;
-      top: 0rem;
+      top: 2rem;
     }
 
     & > div {
@@ -77,15 +86,13 @@
     }
     & > .contentWrapper {
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.1);
       min-height: 50vh;
     }
 
     & > div > h2,
     & > div > p {
-      @include flex-center-row;
-      background-color: rgba(0, 0, 0, 0.1);
-      padding: 2rem 1rem;
+      background-color: $content-card-color-light;
+      padding: 1rem;
       border-radius: 0.4rem;
       width: 100%;
       margin: 0;
@@ -96,9 +103,8 @@
   @media (prefers-color-scheme: dark) {
     .sectionWrapper {
       & > div > h2,
-      & > div > p,
-      & > .contentWrapper {
-        background-color: rgba(255, 255, 255, 0.02);
+      & > div > p {
+        background-color: $content-card-color-dark;
       }
     }
   }
@@ -121,7 +127,14 @@
     }
     & > div > h2,
     & > div > p {
-      padding: 4rem 1rem;
+      padding: 1rem;
     }
   }
+}
+
+.sectionButtonWrapper {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

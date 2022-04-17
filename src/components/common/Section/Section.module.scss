@@ -12,20 +12,20 @@
   }
 }
 
-// .sections:nth-child(odd) {
-//   background-color: lighten($bg-clr-lgt, 10%);
-// }
+.sections:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.04);
+}
 
-// @media (prefers-color-scheme: dark) {
-//   .sections:nth-child(odd) {
-//     background-color: rgba(33, 23, 31, 0.429);
-//   }
-// }
+@media (prefers-color-scheme: dark) {
+  .sections:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
 
 @include Screen-size-medium {
   .sections {
     & > div {
-      width: 80%;
+      width: 90%;
     }
     &:nth-child(even) > div > div {
       & > span,
@@ -38,6 +38,9 @@
 }
 @include Screen-size-large {
   .sections {
+    & > div {
+      width: 80%;
+    }
     &:nth-child(even) > div > div {
       flex-direction: row-reverse;
       & > span,

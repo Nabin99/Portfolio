@@ -1,8 +1,5 @@
 import styles from "./Section.module.scss";
-
-interface SectionType {
-  ({ children, title }: { children: JSX.Element; title: string }): JSX.Element;
-}
+import { SectionType } from "../../../types/types";
 
 const Section: SectionType = ({ children, title }) => {
   return (

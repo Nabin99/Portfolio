@@ -11,6 +11,9 @@
     font-family: $heading-font;
     color: $heading-txt-clr-light;
     font-size: 200%;
+    & > span {
+      white-space: nowrap;
+    }
   }
   & > div > p {
     margin-top: 5%;
@@ -19,7 +22,7 @@
   & .buttonWrapper {
     margin-top: 2rem;
     & > button {
-      margin: 0rem 2rem 2rem 0rem;
+      margin: 0rem 1rem 1rem 0rem;
     }
   }
   & .iconWrapper {
@@ -27,6 +30,9 @@
     position: absolute;
     bottom: 0;
     left: -0.5rem;
+    & svg {
+      fill: $primary-btn-clr-lgt;
+    }
   }
 }
 
@@ -37,6 +43,11 @@
     }
     & > div > p {
       color: $paragraph-txt-clr-dark;
+    }
+    & .iconWrapper {
+      & svg {
+        fill: $primary-btn-clr-dark;
+      }
     }
   }
 }

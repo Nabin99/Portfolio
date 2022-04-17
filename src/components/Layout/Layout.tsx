@@ -22,7 +22,7 @@ const Layout = ({ children }: layoutTypes) => {
   }, []);
   return (
     <>
-      <NavBar />
+      <NavBar navList={navList} />
       <main className={styles.main}>{children}</main>
       {displayLoading ? <Loading /> : null}
       <FooterSection />
@@ -30,3 +30,12 @@ const Layout = ({ children }: layoutTypes) => {
   );
 };
 export default Layout;
+
+const navList: string[] = [
+  "Home",
+  "About",
+  "Skills",
+  "Works",
+  "Blog",
+  "Contact",
+];

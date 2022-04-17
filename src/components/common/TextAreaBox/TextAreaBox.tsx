@@ -1,17 +1,5 @@
 import styles from "./TextAreaBox.module.scss";
-
-interface TextAreaBoxTypes {
-  label: string;
-  placeholder: string;
-  name: string;
-  setValue: React.Dispatch<string>;
-  validateInput: {
-    (e: string): void;
-  };
-  error: boolean;
-  value: string;
-  errorMsg: string;
-}
+import { TextAreaBoxTypes } from "../../../types/types";
 
 const TextAreaBox = ({
   label,

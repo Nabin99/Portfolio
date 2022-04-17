@@ -1,0 +1,61 @@
+@import "../../../styles/Sass/abstracts/variables";
+@import "../../../styles/Sass/abstracts/mixins";
+
+.cardWrapper {
+  min-width: 240px;
+  width: 100%;
+  @include flex-box-generic(center, flex-start, column);
+  padding: 2rem;
+  background-color: $content-card-color-light;
+  border-radius: 0.4rem;
+  gap: 1rem;
+  flex-grow: 1;
+  transition: all 0.4s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+  & > h3 {
+    color: $heading-txt-clr-light;
+    text-align: left;
+    @include line-clamp(1);
+  }
+  & > p {
+    font-size: 80%;
+    color: $paragraph-txt-clr-light;
+    text-align: justify;
+    @include line-clamp(3);
+  }
+}
+
+.iconWrapper {
+  width: 2rem;
+  height: auto;
+  fill: $heading-txt-clr-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cardWrapper {
+    background-color: $content-card-color-dark;
+    & > h3 {
+      color: $heading-txt-clr-dark;
+    }
+    & > p {
+      color: $paragraph-txt-clr-dark;
+    }
+  }
+  .iconWrapper {
+    fill: $heading-txt-clr-dark;
+  }
+}
+
+@include Screen-size-medium {
+  .cardWrapper {
+    width: 45%;
+  }
+}
+
+@include Screen-size-large {
+  .cardWrapper {
+    width: 45%;
+  }
+}

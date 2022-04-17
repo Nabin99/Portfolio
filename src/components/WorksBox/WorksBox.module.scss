@@ -1,0 +1,8 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.worksCardContainer {
+  @include flex-box-generic(center, stretch, row);
+  flex-wrap: wrap;
+  gap: 2rem;
+}

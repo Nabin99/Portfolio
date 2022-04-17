@@ -10,7 +10,6 @@
   & > div {
     //
     padding: 0 0.2rem;
-    // background-color: $bg-clr-dark;
     @include gen-linear-gradient($gradiant-color-top, $gradiant-color-bottom);
     @include flex-box-generic(space-between, center, row);
     width: 95%;
@@ -32,7 +31,7 @@
     font-size: 1rem;
   }
 
-  & svg {
+  & > a > svg {
     @include squireGenerator(2rem);
   }
 }
@@ -81,7 +80,10 @@
   .container {
     & > div {
       background-color: transparent;
-      @include gen-linear-gradient($gradiant-color-top, $gradiant-color-bottom);
+      @include gen-linear-gradient(
+        lighten($gradiant-color-top, 5%),
+        lighten($gradiant-color-bottom, 5%)
+      );
     }
   }
 }
@@ -90,7 +92,7 @@
   .container {
     top: 1rem;
     & > div {
-      width: 80%;
+      width: 90%;
       border-radius: 0.4rem;
     }
   }
@@ -103,5 +105,13 @@
   }
   .menu {
     display: none !important;
+  }
+}
+
+@include Screen-size-large {
+  .container {
+    & > div {
+      width: 80%;
+    }
   }
 }

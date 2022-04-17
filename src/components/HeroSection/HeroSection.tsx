@@ -20,10 +20,9 @@ const HeroSection = () => {
         <div className={styles.contentWrapper}>
           <div>
             <h1>
-              HI,
+              HI THERE,
               <br />
-              IT{`’`}S ME <br />
-              NABIN DHITAL. <br />
+              IT{`’`}S ME <span>NABIN DHITAL.</span> <br />
             </h1>
             <p>
               A Full Stack WEB Developer. <br />

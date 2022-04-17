@@ -1,18 +1,5 @@
 import styles from "./InputBox.module.scss";
-
-interface InputBoxTypes {
-  label: string;
-  type: string;
-  placeholder: string;
-  name: string;
-  setValue: React.Dispatch<string>;
-  validateInput: {
-    (value: string): void;
-  };
-  error: boolean;
-  value: string;
-  errorMsg: string;
-}
+import { InputBoxTypes } from "../../../types/types";
 
 const InputBox = ({
   label,

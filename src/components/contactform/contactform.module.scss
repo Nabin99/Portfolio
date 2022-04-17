@@ -44,23 +44,23 @@
   color: $paragraph-txt-clr-light;
 }
 
+.hireForm .container > div:nth-child(4),
 .hireForm .container > div:nth-child(5),
-.hireForm .container > div:nth-child(6),
-.hireForm .container > div:nth-child(7) {
+.hireForm .container > div:nth-child(6) {
   width: 100%;
 }
-.hireForm .container > div:nth-child(6),
-.hireForm .container > div:nth-child(7) {
+.hireForm .container > div:nth-child(5),
+.hireForm .container > div:nth-child(6) {
   margin-bottom: 0px;
   & > button {
     width: 100%;
   }
 }
-.hireForm .container > div:nth-child(7) {
+.hireForm .container > div:nth-child(6) {
   margin-top: 1rem;
 }
 
-.hireForm .container > div:nth-child(8) {
+.hireForm .container > div:nth-child(7) {
   @include flex-box-generic(space-between, center, row);
   width: 100%;
   & > button {

@@ -4,17 +4,8 @@ import { useEffect, useState } from "react";
 import SvgProvider from "../../constants/SvgProvider";
 import NavItem from "../common/NavItem/NavItem";
 
-const NavBar = (): JSX.Element => {
+const NavBar = ({ navList }: { navList: string[] }): JSX.Element => {
   const [displayMenu, displayMenuSet] = useState(false);
-
-  const navList: string[] = [
-    "Home",
-    "About",
-    "Skills",
-    "Works",
-    "Blog",
-    "Contact",
-  ];
 
   const showMenu = () => {
     if (!displayMenu) displayMenuSet(true);

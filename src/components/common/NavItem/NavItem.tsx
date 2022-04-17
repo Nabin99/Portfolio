@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./NavItem.module.scss";
-
-type NavType = {
-  title: string;
-  toggle: () => void;
-};
+import { NavType } from "../../../types/types";
 
 const NavItem = ({ title, toggle }: NavType): JSX.Element => {
   return (

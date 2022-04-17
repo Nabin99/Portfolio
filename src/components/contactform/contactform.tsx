@@ -3,7 +3,6 @@ import {
   emailValidator,
   messageValidator,
   nameValidator,
-  lastNameValidator,
 } from "../../utils/formValidators/fomValidators";
 import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
@@ -15,43 +14,31 @@ interface ContactFormTypes {
 }
 
 const ContactForm = ({ hideForm }: ContactFormTypes) => {
-  const [firstName, firstNameSet] = useState("");
-  const [lastName, lastNameSet] = useState("");
+  const [fullName, fullNameSet] = useState("");
   const [email, emailSet] = useState("");
   const [message, messageSet] = useState("");
   const [error, errorSet] = useState({
-    firstNameError: false,
-    lastNameError: false,
+    fullNameError: false,
     emailError: false,
     messageError: false,
   });
 
   const clearForm = () => {
-    firstNameSet("");
-    lastNameSet("");
+    fullNameSet("");
     emailSet("");
     messageSet("");
     errorSet({
-      firstNameError: false,
-      lastNameError: false,
+      fullNameError: false,
       emailError: false,
       messageError: false,
     });
   };
 
-  const validateFirstName = (value: string) => {
+  const validatefullName = (value: string) => {
     if (!nameValidator(value)) {
-      errorSet((pre) => ({ ...pre, firstNameError: true }));
+      errorSet((pre) => ({ ...pre, fullNameError: true }));
     } else {
-      errorSet((pre) => ({ ...pre, firstNameError: false }));
-    }
-  };
-
-  const validatelastName = (value: string) => {
-    if (!lastNameValidator(value)) {
-      errorSet((pre) => ({ ...pre, lastNameError: true }));
-    } else {
-      errorSet((pre) => ({ ...pre, lastNameError: false }));
+      errorSet((pre) => ({ ...pre, fullNameError: false }));
     }
   };
 
@@ -72,21 +59,17 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
   const submit = () => {
     let tempErr = {
-      firstNameError: false,
-      lastNameError: false,
+      fullNameError: false,
       emailError: false,
       messageError: false,
     };
     let errCnt = 0;
 
-    if (!nameValidator(firstName)) {
-      tempErr.firstNameError = true;
+    if (!nameValidator(fullName)) {
+      tempErr.fullNameError = true;
       errCnt++;
     }
-    if (!nameValidator(lastName)) {
-      tempErr.lastNameError = true;
-      errCnt++;
-    }
+
     if (!emailValidator(email)) {
       tempErr.emailError = true;
       errCnt++;
@@ -99,7 +82,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
     errorSet({ ...tempErr });
 
     if (errCnt === 0) {
-      console.log(firstName, lastName, email, message);
+      console.log(fullName, email, message);
       hideForm();
     }
   };
@@ -111,26 +94,15 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
           <p>Please fill in this form so that I can contact you back.</p>
 
           <InputBox
-            label="First Name"
-            name="firstName"
-            placeholder="Please enter first name here..."
+            label="Full Name"
+            name="fullName"
+            placeholder="Please enter full name here..."
             type="text"
-            setValue={firstNameSet}
-            validateInput={validateFirstName}
-            error={error.firstNameError}
-            value={firstName}
-            errorMsg="please enter a valid first name."
-          />
-          <InputBox
-            label="Last Name"
-            name="lastName"
-            placeholder="Please enter last name here..."
-            type="text"
-            validateInput={validatelastName}
-            setValue={lastNameSet}
-            error={error.lastNameError}
-            value={lastName}
-            errorMsg="please enter a valid last name."
+            setValue={fullNameSet}
+            validateInput={validatefullName}
+            error={error.fullNameError}
+            value={fullName}
+            errorMsg="please enter a valid full name."
           />
 
           <InputBox

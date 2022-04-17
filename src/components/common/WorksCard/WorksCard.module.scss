@@ -1,33 +1,40 @@
-@import "../../styles/Sass/abstracts/variables";
-@import "../../styles/Sass/abstracts/mixins";
+@import "../../../styles/Sass/abstracts/variables";
+@import "../../../styles/Sass/abstracts/mixins";
 
 .cardWrapper {
-  width: 250px;
-  height: 300px;
-  background-color: desaturate(darken($bg-clr-lgt, 10%), 40%);
-  position: relative;
+  min-width: 240px;
+  width: 100%;
+  background-color: $content-card-color-light;
   border-radius: 0.4rem;
   transition: all 0.4s ease;
+  padding: 0.6rem;
+  overflow: hidden;
+  @include flex-box-generic(space-between, flex-start, column);
+  gap: 0.8rem;
+  & :last-of-type {
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+  }
+  flex-grow: 1;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
+    & :last-of-type {
+      opacity: 1 !important;
+    }
   }
   & > .titleWrapper {
-    margin: 0.2rem 0rem;
-    padding-left: 0.2rem;
     width: 100%;
     @include flex-box-generic(flex-start, center, row);
-    gap: 10px;
-    height: 50px;
+    gap: 0.5rem;
+    @include line-clamp(1);
 
     & > div {
-      @include flex-box-generic(center, flex-start, column);
+      text-align: left;
     }
     & > .icons {
       border-radius: 0.2rem;
-      @include squireGenerator(40px);
+      @include squireGenerator(1.75rem);
       @include flex-center-row;
-      border: 1px solid black;
-      padding: 2px;
       & > img {
         width: 100%;
         height: 100%;
@@ -48,11 +55,10 @@
     }
   }
   & > .imageWrapper {
-    height: 140px;
     @include flex-center-row;
-    background-color: grey;
     overflow: hidden;
     position: relative;
+    border-radius: 0.4rem;
     & > img {
       width: 100%;
       height: 100%;
@@ -60,29 +66,21 @@
     }
   }
   & > p {
-    padding: 0.2rem 0.2rem;
-    line-height: 1.4;
     text-align: left;
-    height: 60px;
     font-size: 90%;
-    @include line-clamp(3);
-    color: darken($paragraph-txt-clr-light, 20%);
+    @include line-clamp(2);
+    color: $paragraph-txt-clr-light;
   }
   & > .buttonsWrapper {
-    height: 46px;
-    width: 50%;
-    margin: auto;
+    margin-left: auto;
     @include flex-center-row;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .cardWrapper {
-    background-color: desaturate($bg-clr-dark, 60%);
+    background-color: $content-card-color-dark;
     & > .titleWrapper {
-      & > .icons {
-        border-color: grey;
-      }
       & > div > span {
         color: $paragraph-txt-clr-dark;
       }
@@ -93,5 +91,17 @@
     & > p {
       color: $paragraph-txt-clr-dark;
     }
+  }
+}
+
+@include Screen-size-medium {
+  .cardWrapper {
+    width: 40%;
+  }
+}
+
+@include Screen-size-large {
+  .cardWrapper {
+    width: 20%;
   }
 }

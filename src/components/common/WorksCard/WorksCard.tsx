@@ -1,16 +1,8 @@
-import CardsLink from "../common/CardsLink/CardsLink";
+import CardsLink from "../CardsLink/CardsLink";
 import styles from "./WorksCard.module.scss";
-import image from "../../assets/png/workfallbackimg.png";
-import logo from "../../assets/png/logo.png";
-
-interface WorksCardTypes {
-  title: string;
-  createdAt: string;
-  imgSrc?: string;
-  description: string;
-  urlAddress: string;
-  iconSrc?: string;
-}
+import image from "../../../assets/png/workfallbackimg.png";
+import logo from "../../../assets/png/logo.png";
+import { WorksCardTypes } from "../../../types/types";
 
 const WorksCard = ({
   title,
@@ -22,6 +14,9 @@ const WorksCard = ({
 }: WorksCardTypes) => {
   return (
     <div className={styles.cardWrapper}>
+      <div className={styles.imageWrapper}>
+        <img src={imgSrc === "" ? image : imgSrc} alt={title + " image"} />
+      </div>
       <div className={styles.titleWrapper}>
         <div className={styles.icons}>
           <img src={iconSrc === "" ? logo : iconSrc} alt="icon" />
@@ -31,14 +26,12 @@ const WorksCard = ({
           <span>{new Date(createdAt).toDateString()}</span>
         </div>
       </div>
-      <div className={styles.imageWrapper}>
-        <img src={imgSrc === "" ? image : imgSrc} alt={title + " image"} />
-      </div>
+
       <p>
         {description ? description : "This project doesn't have an description"}
       </p>
       <div className={styles.buttonsWrapper}>
-        <CardsLink label="Go to GitHub" urlAddress={urlAddress} />
+        <CardsLink label="Go to Site" urlAddress={urlAddress} />
       </div>
     </div>
   );

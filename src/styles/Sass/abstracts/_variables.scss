@@ -7,17 +7,20 @@ $primary-txt-clr-lgt: #594f61;
 $primary-txt-clr-dark: #acc3c1;
 
 $heading-txt-clr-dark: #99b6b6;
-$heading-txt-clr-light: #504c54;
-$paragraph-txt-clr-light: #64837e;
-$paragraph-txt-clr-dark: #c3b6c5;
+$heading-txt-clr-light: #685d74;
+$paragraph-txt-clr-light: #4d6164;
+$paragraph-txt-clr-dark: #c7bec9;
 
-$primary-btn-clr-lgt: #3f275f;
+$primary-btn-clr-lgt: #423750;
 $primary-btn-clr-dark: desaturate(darken(#86c5ca, 10%), 10%);
 $primary-btn-txt-clr-lgt: white;
 $primary-btn-clr-txt-dark: #06002e;
 
-$gradiant-color-top: #4d585a;
-$gradiant-color-bottom: #59505c;
+$gradiant-color-top: #373f41;
+$gradiant-color-bottom: #3b353d;
+
+$content-card-color-light: rgba(0, 0, 0, 0.03);
+$content-card-color-dark: rgba(255, 255, 255, 0.03);
 
 $error-color: rgb(189, 27, 27) !important;
 

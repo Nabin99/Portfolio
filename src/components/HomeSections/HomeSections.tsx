@@ -1,13 +1,7 @@
 import Section from "../common/Section/Section";
 import styles from "./HomeSection.module.scss";
-
-interface SectionTypes {
-  title: string;
-  name: string;
-  heading: string;
-  description: string;
-  children: JSX.Element;
-}
+import { HomeSectionTypes } from "../../types/types";
+import SectionButton from "../common/SectionButton/SectionButton";
 
 const HomeSection = ({
   title,
@@ -15,17 +9,25 @@ const HomeSection = ({
   heading,
   description,
   children,
-}: SectionTypes) => {
+  icon,
+  pageLink,
+}: HomeSectionTypes) => {
   return (
     <Section title={title}>
       <div className={styles.sectionWrapper}>
-        <span>{name}</span>
+        <span>{name.toUpperCase()}</span>
         <div className={styles.infoWrapper}>
-          <h2>{heading}</h2>
+          <h2>
+            {icon}
+            {heading}
+          </h2>
           <p>{description}</p>
         </div>
         <hr />
         <div className={styles.contentWrapper}>{children}</div>
+        <div className={styles.sectionButtonWrapper}>
+          <SectionButton label="LEARN MORE >>" urlAddress={pageLink} />
+        </div>
       </div>
     </Section>
   );
