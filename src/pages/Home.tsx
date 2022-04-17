@@ -1,3 +1,4 @@
+import BlogLists from "../components/BlogLists/BlogLists";
 import HeroSection from "../components/HeroSection/HeroSection";
 import HomeSection from "../components/HomeSections/HomeSections";
 import ServiceBox from "../components/ServiceBox/ServiceBox";
@@ -63,7 +64,7 @@ const sectionLists = [
     heading: "My Recent Blogs",
     description:
       " Knowledge sharing is a good habit. It helps every one with similar field to grow with the community. I like to share all the things that I learn. You can check out my blogs listed here.",
-    children: <></>,
+    children: <BlogLists />,
     icon: SvgProvider.blog,
     pageLink: "/blog",
   },
