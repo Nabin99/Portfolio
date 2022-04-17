@@ -100,10 +100,6 @@
   }
   .lists {
     display: flex !important;
-    & div:hover {
-      color: $primary-btn-clr-dark;
-      border-bottom: 2px solid $primary-btn-clr-dark;
-    }
   }
   .menu {
     display: none !important;

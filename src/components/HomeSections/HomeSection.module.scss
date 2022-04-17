@@ -77,18 +77,19 @@
     }
     & > .contentWrapper {
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, 0.1);
       min-height: 50vh;
     }
 
     & > div > h2,
     & > div > p {
       @include flex-center-row;
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, 0.1);
       padding: 2rem 1rem;
       border-radius: 0.4rem;
       width: 100%;
       margin: 0;
+      flex-grow: 1;
     }
   }
 

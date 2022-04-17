@@ -5,8 +5,19 @@
   @include flex-box-generic(space-evenly, center, row);
   padding: 0.6rem 1rem;
   color: $primary-txt-clr-dark;
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease;
   & > span {
     font-weight: bold;
     font-size: 1rem;
+  }
+}
+
+@include Screen-size-medium {
+  .navItem {
+    &:hover {
+      color: $primary-btn-clr-dark;
+      border-bottom: 2px solid $primary-btn-clr-dark;
+    }
   }
 }

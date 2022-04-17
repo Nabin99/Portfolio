@@ -8,6 +8,7 @@ interface ButtonTypes {
 const Button = ({ label, clickHandler }: ButtonTypes) => {
   return (
     <button
+      title={label}
       onClick={(e) => {
         e.preventDefault();
         clickHandler();

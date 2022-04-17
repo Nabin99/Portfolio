@@ -23,9 +23,9 @@ export default Home;
 
 const sectionLists = [
   {
-    title: "Services Provided by me.",
+    title: "Services I Provide.",
     name: "Services",
-    heading: "Services Provided By Me.",
+    heading: "Services I Provide.",
     description:
       " As a Full Stack Developer, I offer full stack software support using different tools like Reactjs, Nextjs, Nodejs, React Native etc.",
     children: <></>,
