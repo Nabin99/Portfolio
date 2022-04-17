@@ -3,7 +3,7 @@
 This project is created using create react app.\
 This project showcase the personal skills, works, share knowlodge through blogs.
 
-## Packaged Used
+## Packages Used
 
 ```
  "@types/react": "^17.0.44",
