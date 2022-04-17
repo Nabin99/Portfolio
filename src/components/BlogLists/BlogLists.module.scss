@@ -1,0 +1,73 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.cardsContainer {
+  @include flex-box-generic(center, center, column);
+  background-color: $content-card-color-light;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 0.4rem;
+  & a {
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
+.itemWrapper {
+  @include flex-box-generic(space-between, center, row);
+  width: 100%;
+  gap: 2rem;
+  color: $paragraph-txt-clr-light;
+  padding: 0.8rem 2%;
+  border-radius: 0.4rem;
+  text-align: left;
+  border-bottom: 1px solid $content-card-color-light;
+  transition: background-color 0.4s ease;
+  & > * {
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+  }
+  &:hover,
+  &:active {
+    background-color: $content-card-color-light;
+    & > * {
+      opacity: 1;
+      transform: scale(1.008);
+    }
+    & > p {
+      text-decoration: underline;
+    }
+  }
+  & > span:first-of-type {
+    font-size: 80%;
+  }
+  & > span:last-of-type {
+    font-size: 120%;
+    font-weight: 900;
+  }
+  & > p {
+    width: 70%;
+    @include line-clamp(2);
+    color: $heading-txt-clr-light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cardsContainer {
+    background-color: $content-card-color-dark;
+  }
+  .itemWrapper {
+    color: $paragraph-txt-clr-dark;
+    border-color: $content-card-color-dark;
+    &:hover,
+    &:active {
+      background-color: $content-card-color-dark;
+    }
+    & > span:first-of-type {
+      color: $paragraph-txt-clr-dark;
+    }
+    & > p {
+      color: $heading-txt-clr-dark;
+    }
+  }
+}
