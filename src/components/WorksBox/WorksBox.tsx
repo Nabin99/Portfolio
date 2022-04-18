@@ -8,7 +8,7 @@ const WorksBox = () => {
 
   useEffect(() => {
     let mounted = true;
-    getData("https://api.github.com/users/Nabin99/repos")
+    getData("https://api.github.com/users/Nabin99/repos?per_page=6")
       .then((res) => {
         if (res.ok) return res.json();
         else throw res.json();

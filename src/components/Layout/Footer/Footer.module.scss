@@ -5,7 +5,7 @@
   @include bg-gradient-dark;
   & > section {
     //@include gen-linear-gradient($gradiant-color-top, $gradiant-color-bottom);
-    padding: 2rem 0rem;
+    padding: 8rem 0rem 2rem 0rem;
   }
 }
 .footerWrapper {

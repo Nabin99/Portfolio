@@ -66,14 +66,4 @@ const lists: BlogItemTypes[] = [
     title: "First blog | This is My First Blog here.",
     linkAddress: "/",
   },
-  {
-    date: new Date(),
-    title: "First blog | This is My First Blog here.",
-    linkAddress: "/",
-  },
-  {
-    date: new Date(),
-    title: "First blog | This is My First Blog here.",
-    linkAddress: "/",
-  },
 ];
