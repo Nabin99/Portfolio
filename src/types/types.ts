@@ -69,3 +69,11 @@ export interface WorksCardTypes {
   urlAddress: string;
   iconSrc?: string;
 }
+
+export interface BlogsDetailedTypes {
+  title: string;
+  description: string;
+  children: JSX.Element;
+  adminInfo: JSX.Element;
+  recentPosts: JSX.Element;
+}
