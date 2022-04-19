@@ -1,0 +1,11 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.container {
+  width: 100%;
+  background-color: $content-card-color-light;
+  border-radius: 0.4rem;
+}
+.imageWrapper {
+  width: 100%;
+}
