@@ -8,6 +8,7 @@ import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
 import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
 import styles from "./contactform.module.scss";
+import postData from "../../services/requestHandlers/postData";
 
 interface ContactFormTypes {
   hideForm: () => void;
@@ -82,7 +83,11 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
     errorSet({ ...tempErr });
 
     if (errCnt === 0) {
-      console.log(fullName, email, message);
+      postData("http://localhost:5000/contact/", {
+        name: fullName,
+        email: email,
+        message: message,
+      });
       hideForm();
     }
   };
