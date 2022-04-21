@@ -8,4 +8,15 @@
 }
 .imageWrapper {
   width: 100%;
+  height: 20rem;
+}
+
+.tags {
+  @include flex-box-generic(flex-start, center, row);
+  & > svg {
+    @include squireGenerator((1rem));
+  }
+  & > span {
+    font-size: 90%;
+  }
 }

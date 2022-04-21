@@ -15,7 +15,7 @@ const BlogCards = ({ heading, paragraph, image }: BlogCardsTypes) => {
         <img src={image} alt={heading} />
       </div>
       <div className={styles.tags}>
-        {SvgProvider.userIcon} <span>Admin</span> {SvgProvider.calender}{" "}
+        {SvgProvider.userIcon} <span>Admin</span> {SvgProvider.calender}
         <span>{new Date().toDateString()}</span>
       </div>
       <h2>{heading}</h2>
