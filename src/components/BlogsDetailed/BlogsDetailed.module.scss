@@ -1,0 +1,191 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.pageWrapper {
+  @include flex-center-column;
+  width: 100%;
+  margin-bottom: 8rem;
+  & > h1 {
+    font-family: $heading-font;
+    font-size: 160%;
+    color: $heading-txt-clr-light;
+    padding-top: 6rem;
+  }
+  & > p {
+    font-size: 90%;
+    color: $paragraph-txt-clr-light;
+    padding: 1.5rem 0rem;
+  }
+  & > hr {
+    width: 10%;
+    border: none;
+    border-bottom: 4px solid $primary-btn-clr-lgt;
+    margin-bottom: 2rem;
+  }
+  & > .layout {
+    @include flex-box-generic(flex-start, center, column);
+    width: 100%;
+    min-height: 50vh;
+    gap: 2rem;
+  }
+  & > .layout > .boxWrapper {
+    @include flex-box-generic(center, center, column);
+    gap: 2rem;
+    width: 100%;
+  }
+  & > .layout > .blogsCards {
+    @include flex-center-column;
+    width: 100%;
+  }
+
+  @include Screen-size-medium {
+    & > .layout {
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: row;
+      & > .boxWrapper {
+        flex-direction: row;
+      }
+    }
+  }
+  @include Screen-size-large {
+    & > .layout {
+      & > .boxWrapper {
+        flex-direction: column;
+        width: 30%;
+      }
+      & > .blogsCards {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pageWrapper {
+    & > h1 {
+      color: $heading-txt-clr-dark;
+    }
+    & > p {
+      color: $paragraph-txt-clr-dark;
+    }
+    & > hr {
+      border-color: $primary-btn-clr-dark;
+    }
+  }
+}
+
+///////////////////////////////////////////
+
+.infoContainer {
+  background-color: $content-card-color-light;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  @include flex-center-column;
+  text-align: center;
+  & > h3 {
+    font-family: $heading-font;
+    font-size: 140%;
+    color: $heading-txt-clr-light;
+  }
+  & > p {
+    color: $paragraph-txt-clr-light;
+  }
+  & > .imageWrapper {
+    @include squireGenerator(12rem);
+    background-color: $content-card-color-light;
+    margin: 1rem 0rem;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  & > .iconsWrapper {
+    @include flex-center-row;
+    & svg {
+      fill: $primary-btn-clr-lgt;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .infoContainer {
+    background-color: $content-card-color-dark;
+    & > h3 {
+      color: $heading-txt-clr-dark;
+    }
+    & > p {
+      color: $paragraph-txt-clr-dark;
+    }
+    & > .imageWrapper {
+      background-color: $content-card-color-dark;
+    }
+    & > .iconsWrapper {
+      & svg {
+        fill: $primary-btn-clr-dark;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////
+
+.recentPostsContainer {
+  padding: 1rem;
+  width: 100%;
+  background-color: $content-card-color-light;
+  border-radius: 0.4rem;
+  @include flex-box-generic(center, flex-start, column);
+  & > h3 {
+    font-family: $heading-font;
+    font-size: 140%;
+    color: $heading-txt-clr-light;
+  }
+  & > hr {
+    border: none;
+    border-bottom: 4px solid $primary-btn-clr-lgt;
+    width: 100%;
+  }
+  & > .items {
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 0.3rem;
+    @include flex-box-generic(flex-start, center, row);
+    gap: 0.5rem;
+    & > div:first-of-type {
+      @include squireGenerator(2.5rem);
+      border-radius: 0.2rem;
+    }
+    &:hover {
+      background-color: $content-card-color-light;
+    }
+  }
+}
+.items > div:last-of-type {
+  & > p,
+  & > span {
+    color: $paragraph-txt-clr-light;
+  }
+  & > span {
+    opacity: 0.6;
+    font-size: 70%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .recentPostsContainer {
+    background-color: $content-card-color-dark;
+    & > h3 {
+      color: $heading-txt-clr-dark;
+    }
+    & > hr {
+      border-color: $primary-btn-clr-dark;
+    }
+  }
+  .items > div:last-of-type {
+    & > p,
+    & > span {
+      color: $paragraph-txt-clr-dark;
+    }
+  }
+}

@@ -7,12 +7,11 @@
   background-color: $content-card-color-light;
   border-radius: 0.4rem;
   transition: all 0.4s ease;
-  padding: 0.6rem;
+  //padding: 0rem 0.6rem 0.6rem 0.6rem;
   overflow: hidden;
   @include flex-box-generic(space-between, flex-start, column);
   gap: 0.8rem;
   & :last-of-type {
-    opacity: 0.8;
     transition: opacity 0.4s ease;
   }
   flex-grow: 1;
@@ -26,6 +25,7 @@
     width: 100%;
     @include flex-box-generic(flex-start, center, row);
     gap: 0.5rem;
+    padding: 0rem 0.4rem;
     @include line-clamp(1);
 
     & > div {
@@ -58,12 +58,12 @@
     @include flex-center-row;
     overflow: hidden;
     position: relative;
-    border-radius: 0.4rem;
+    border-radius: 0.4rem 0.4rem 0rem 0rem;
     & > img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
   & > p {
@@ -71,10 +71,12 @@
     font-size: 90%;
     @include line-clamp(2);
     color: $paragraph-txt-clr-light;
+    padding: 0rem 0.4rem;
   }
   & > .buttonsWrapper {
     margin-left: auto;
     @include flex-center-row;
+    padding: 0.4rem;
   }
 }
 
