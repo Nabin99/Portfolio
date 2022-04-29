@@ -6,17 +6,12 @@ This project showcase the personal skills, works, share knowlodge through blogs.
 ## Packages Used
 
 ```
- "@types/react",
-    "gsap",
-    "react-dom",
-    "react-router-dom",
-    "sass",
-    "typescript",
-
-    "devDependencies": 
-    "@types/react-dom"
-  
-    
+*@types/react
+*gsap
+*react-dom
+*react-router-dom
+*sass
+*typescript
 ```
 
 ## Available Scripts
