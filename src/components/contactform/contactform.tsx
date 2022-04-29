@@ -7,7 +7,7 @@ import {
 import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
 import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
-import styles from "./contactform.module.scss";
+import styles from "./ContactForm.module.scss";
 import postData from "../../services/requestHandlers/postData";
 
 interface ContactFormTypes {

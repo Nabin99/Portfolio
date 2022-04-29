@@ -12,6 +12,10 @@ This project showcase the personal skills, works, share knowlodge through blogs.
     "react-router-dom",
     "sass",
     "typescript",
+
+    "devDependencies": 
+    "@types/react-dom"
+  
     
 ```
 
