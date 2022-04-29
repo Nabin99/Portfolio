@@ -135,6 +135,7 @@ const ContactForm = () => {
     errorSet({ ...tempErr });
 
     if (errCnt === 0) {
+      toast("Sending Message");
       postData("http://localhost:5000/contact/", {
         name: fullName,
         email: email,

@@ -86,13 +86,18 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
     errorSet({ ...tempErr });
 
     if (errCnt === 0) {
+      toast("Sending Message");
       postData("http://localhost:5000/contact/", {
         name: fullName,
         email: email,
         message: message,
       })
-        .then((res) => toast("Successfully Received Your Message"))
+        .then((res) => {
+          toast("Successfully Received Your Message");
+        })
         .catch((err) => toast("An Error Occured"));
+
+      clearForm();
     }
   };
   return (
