@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../common/Button/Button";
 import Section from "../common/Section/Section";
-import ContactForm from "../ContactForm/ContactForm";
+import ContactForm from "../ContactForm/contactform";
 import styles from "./HeroSection.module.scss";
 import SvgIcon from "../common/SvgIcon/SvgIcon";
 import SvgProvider from "../../constants/SvgProvider";

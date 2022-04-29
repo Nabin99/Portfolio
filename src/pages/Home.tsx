@@ -2,6 +2,7 @@ import BlogLists from "../components/BlogLists/BlogLists";
 import HeroSection from "../components/HeroSection/HeroSection";
 import HomeSection from "../components/HomeSections/HomeSections";
 import ServiceBox from "../components/ServiceBox/ServiceBox";
+import SkillsContainer from "../components/Skills/SkillsContainer";
 import WorksBox from "../components/WorksBox/WorksBox";
 import SvgProvider from "../constants/SvgProvider";
 
@@ -44,7 +45,7 @@ const sectionLists = [
     heading: "Skills, I Currently Possess.",
     description:
       "  I am learnig and growing at the same time. Being a full stack developer, I need to have different skills. Skills that I currently have are listed below, mean while I learn new skills and grow with every project I do.",
-    children: <></>,
+    children: <SkillsContainer />,
     icon: SvgProvider.skills,
     pageLink: "/skills",
   },
