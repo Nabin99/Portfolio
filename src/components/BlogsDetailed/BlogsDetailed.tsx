@@ -3,8 +3,8 @@ import Section from "../common/Section/Section";
 import { BlogsDetailedTypes } from "../../types/types";
 import SvgIcon from "../common/SvgIcon/SvgIcon";
 import SvgProvider from "../../constants/SvgProvider";
-import adminImage from "../../assets/jpg/admin.jpg";
-import logo from  "../../assets/png/logo.png";
+import adminImage from "../../assets/admin.jpg";
+import logo from  "../../assets/logo.png";
 
 const BlogsDetailed = ({
   title,

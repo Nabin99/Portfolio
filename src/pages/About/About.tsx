@@ -1,6 +1,6 @@
 import Section from "../../components/common/Section/Section";
 import styles from "./About.module.scss";
-import adminImg from "../../assets/png/about.png";
+import adminImg from "../../assets/about.png";
 
 const About = () => {
   return (
