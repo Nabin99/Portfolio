@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   emailValidator,
   messageValidator,
@@ -12,41 +14,57 @@ import styles from "./ContactBox.module.scss";
 import Section from "../common/Section/Section";
 import SvgProvider from "../../constants/SvgProvider";
 
-interface ContactBoxTypes{
-    title:string;
-    description:string;
+interface ContactBoxTypes {
+  title: string;
+  description: string;
 }
 
-const ContactBox = ({
-    title,
-    description,
-  }:ContactBoxTypes) => {
+const ContactBox = ({ title, description }: ContactBoxTypes) => {
   return (
     <Section title="My Contact Page">
-    <div className={styles.pageWrapper}>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <hr />
-      <div className={styles.layout}>
-        <div className={styles.formWrapper}>
-            <ContactForm/>
-        </div>
-        <div className={styles.iconsWrapper}>
-            <SocialIcons title="GitHub" icon={SvgProvider.github} address="https://github.com/Nabin99"/>
-            <SocialIcons title="LinkedIn" icon={SvgProvider.linkedin} address="https://www.linkedin.com/in/nabin-dhital-a8ba64234"/>
-            <SocialIcons title="Facebook" icon={SvgProvider.facebook} address="https://www.facebook.com/nabin.dhital.56"/>
-            <SocialIcons title="Instagram" icon={SvgProvider.instagram} address="https://www.instagram.com/dhitalnabin11/"/>
-            <SocialIcons title="Twitter" icon={SvgProvider.twitter}  address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"/>
-            <SocialIcons title="Mail" icon={SvgProvider.mail}/>
+      <div className={styles.pageWrapper}>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <hr />
+        <div className={styles.layout}>
+          <div className={styles.formWrapper}>
+            <ContactForm />
+          </div>
+          <div className={styles.iconsWrapper}>
+            <SocialIcons
+              title="GitHub"
+              icon={SvgProvider.github}
+              address="https://github.com/Nabin99"
+            />
+            <SocialIcons
+              title="LinkedIn"
+              icon={SvgProvider.linkedin}
+              address="https://www.linkedin.com/in/nabin-dhital-a8ba64234"
+            />
+            <SocialIcons
+              title="Facebook"
+              icon={SvgProvider.facebook}
+              address="https://www.facebook.com/nabin.dhital.56"
+            />
+            <SocialIcons
+              title="Instagram"
+              icon={SvgProvider.instagram}
+              address="https://www.instagram.com/dhitalnabin11/"
+            />
+            <SocialIcons
+              title="Twitter"
+              icon={SvgProvider.twitter}
+              address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"
+            />
+            <SocialIcons title="Mail" icon={SvgProvider.mail} />
+          </div>
         </div>
       </div>
-    </div>
-  </Section>
-  )
-}
+    </Section>
+  );
+};
 
 export default ContactBox;
-
 
 const ContactForm = () => {
   const [fullName, fullNameSet] = useState("");
@@ -121,7 +139,9 @@ const ContactForm = () => {
         name: fullName,
         email: email,
         message: message,
-      });
+      })
+        .then((res) => toast("Successfully Received Your Message"))
+        .catch((err) => toast("An Error Occured"));
       clearForm();
     }
   };
@@ -175,24 +195,40 @@ const ContactForm = () => {
           </div>
         </div>
       </form>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
 
-interface SocialIconsTypes{
-    title:string;
-    icon: JSX.Element;
-    address?:string;
+interface SocialIconsTypes {
+  title: string;
+  icon: JSX.Element;
+  address?: string;
 }
 
-
-const SocialIcons = ({title,icon,address}:SocialIconsTypes)=>{
-    return(
-        <a href={address?address:"mailto:dhitalnabin11@gmail.com"} rel="noreferrer" target="_blank" title={title} className={styles.link}>
-        <div className={styles.iconBox}>
-            {icon}
-            <h3>{title}</h3>
-        </div>
-        </a>
-    )
-}
+const SocialIcons = ({ title, icon, address }: SocialIconsTypes) => {
+  return (
+    <a
+      href={address ? address : "mailto:dhitalnabin11@gmail.com"}
+      rel="noreferrer"
+      target="_blank"
+      title={title}
+      className={styles.link}
+    >
+      <div className={styles.iconBox}>
+        {icon}
+        <h3>{title}</h3>
+      </div>
+    </a>
+  );
+};
