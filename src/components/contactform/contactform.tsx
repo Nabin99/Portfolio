@@ -1,4 +1,7 @@
 import { useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   emailValidator,
   messageValidator,
@@ -87,8 +90,9 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
         name: fullName,
         email: email,
         message: message,
-      });
-      hideForm();
+      })
+        .then((res) => toast("Successfully Received Your Message"))
+        .catch((err) => toast("An Error Occured"));
     }
   };
   return (
@@ -142,6 +146,17 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
           </div>
         </div>
       </form>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
