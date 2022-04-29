@@ -1,7 +1,7 @@
 import CardsLink from "../CardsLink/CardsLink";
 import styles from "./WorksCard.module.scss";
-import image from "../../../assets/png/workfallbackimg.png";
-import logo from "../../../assets/png/logo.png";
+import image from "../../../assets/workfallbackimg.png";
+import logo from "../../../assets/logo.png";
 import { WorksCardTypes } from "../../../types/types";
 
 const WorksCard = ({

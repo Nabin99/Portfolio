@@ -3,8 +3,8 @@ import Section from "../common/Section/Section";
 import { BlogsDetailedTypes } from "../../types/types";
 import SvgIcon from "../common/SvgIcon/SvgIcon";
 import SvgProvider from "../../constants/SvgProvider";
-import adminImage from "../../assets/jpg/admin.jpg";
-import logo from  "../../assets/png/logo.png";
+import adminImage from "../../assets/admin.jpg";
+import logo from  "../../assets/logo.png";
 
 const BlogsDetailed = ({
   title,
@@ -55,11 +55,12 @@ const AdminInfo = ({ name, image, adminDescription }: AdminInfoTypes) => {
       </div>
       <p>{adminDescription}</p>
       <div className={styles.iconsWrapper}>
-        <SvgIcon title="Instagram Icon">{SvgProvider.instagram}</SvgIcon>
-        <SvgIcon title="Facebook Icon">{SvgProvider.facebook}</SvgIcon>
-        <SvgIcon title="Twitter Icon">{SvgProvider.twitter}</SvgIcon>
-        <SvgIcon title="LinkedIn Icon">{SvgProvider.linkedin}</SvgIcon>
-        <SvgIcon title="GitHub Icon">{SvgProvider.github}</SvgIcon>
+              <SvgIcon title="Instagram Icon" address="https://www.instagram.com/dhitalnabin11/">{SvgProvider.instagram}</SvgIcon>
+              <SvgIcon title="Facebook Icon" address="https://www.facebook.com/nabin.dhital.56">{SvgProvider.facebook}</SvgIcon>
+              <SvgIcon title="Twitter Icon" address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09">{SvgProvider.twitter}</SvgIcon>
+              <SvgIcon title="LinkedIn Icon" address="https://www.linkedin.com/in/nabin-dhital-a8ba64234">{SvgProvider.linkedin}</SvgIcon>
+              <SvgIcon title="GitHub Icon" address="https://github.com/Nabin99">{SvgProvider.github}</SvgIcon>
+            
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import SvgProvider from "../../constants/SvgProvider";
 import styles from "./BlogCards.module.scss";
-import fallbackImage from "../../assets/png/workfallbackimg.png"
+import fallbackImage from "../../assets/workfallbackimg.png"
 import { Link } from "react-router-dom";
 
 interface BlogCardsTypes {
