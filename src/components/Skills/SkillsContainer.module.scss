@@ -1,0 +1,28 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.skillsContainer{
+    @include flex-center-row;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+.skillsBox{
+    background-color: $content-card-color-light;
+    padding:1rem;
+    border-radius: .4rem;
+    overflow: hidden;
+    @include flex-center-row;
+    transition: all .4s ease;
+    &>img{
+       width: 12rem;
+        border-radius: .4rem;
+    }
+    &:hover{
+        transform: scale(1.06);
+    }
+}
+@media (prefers-color-scheme:dark){
+    .skillsBox{
+        background-color: $content-card-color-dark;
+    }
+}

@@ -12,6 +12,7 @@ This project showcase the personal skills, works, share knowlodge through blogs.
 *react-router-dom
 *sass
 *typescript
+*react-toastify
 ```
 
 ## Available Scripts
