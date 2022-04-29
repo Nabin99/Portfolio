@@ -8,6 +8,10 @@
   min-height: 80vh;
   position: relative;
   padding: 6rem 0rem;
+  & > .contentWrapper {
+    width: 100%;
+    min-height: 50vh;
+  }
 
   & > span {
     color: $primary-btn-clr-lgt;

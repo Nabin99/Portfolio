@@ -4,8 +4,9 @@ import styles from "./BlogLists.module.scss";
 const BlogLists = () => {
   return (
     <div className={styles.cardsContainer}>
-      {lists.map((obj: BlogItemTypes) => (
+      {lists.map((obj: BlogItemTypes,i:number) => (
         <BlogItem
+        key={obj.title+i}
           date={obj.date}
           title={obj.title}
           linkAddress={obj.linkAddress}

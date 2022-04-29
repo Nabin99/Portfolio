@@ -22,7 +22,7 @@
   & > p {
     font-size: 80%;
     color: $paragraph-txt-clr-light;
-    text-align: justify;
+    text-align: left;
     @include line-clamp(3);
   }
 }

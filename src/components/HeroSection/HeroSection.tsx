@@ -42,7 +42,7 @@ const HeroSection = () => {
           </div>
         </div>
       </Section>
-      {toggleContact ? <ContactForm hideForm={hideContact} /> : null}
+      {toggleContact ?<ContactForm hideForm={hideContact} /> : null}
     </>
   );
 };

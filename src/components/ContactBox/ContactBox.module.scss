@@ -1,0 +1,220 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.pageWrapper {
+    @include flex-box-generic(center,center,column);
+    width: 100%;
+    margin-bottom: 8rem;
+    & > h1 {
+      font-family: $heading-font;
+      font-size: 160%;
+      color: $heading-txt-clr-light;
+      padding-top: 6rem;
+    }
+    & > p {
+      font-size: 90%;
+      color: $paragraph-txt-clr-light;
+      padding: 1.5rem 0rem;
+      text-align: center;
+    }
+    & > hr {
+      width: 10%;
+      border: none;
+      border-bottom: 4px solid $primary-btn-clr-lgt;
+      margin-bottom: 2rem;
+    }
+    & > .layout {
+      @include flex-box-generic(flex-start, stretch, column);
+      width: 100%;
+      min-height: 50vh;
+      gap: 2rem;
+      flex-grow: 1
+    }
+    & > .layout > .formWrapper {
+      @include flex-box-generic(center, center, row);
+      gap: 2rem;
+      width: 100%;
+    }
+    & > .layout > .iconsWrapper {
+      @include flex-box-generic(center,center,row);
+      gap:2rem;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  
+    @include Screen-size-medium {
+      & > .layout {
+        flex-direction: row;
+        & > .formWrapper {
+            width: 70%;
+          }
+          & > .iconsWrapper {
+            width: 30%;
+          }
+      }
+    }
+    // @include Screen-size-large {
+    //   & > .layout {
+    //     & > .formWrapper {
+    //       width: 70%;
+    //     }
+    //     & > .iconsWrapper {
+    //       width: 30%;
+    //     }
+    //   }
+    // }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .pageWrapper {
+      & > h1 {
+        color: $heading-txt-clr-dark;
+      }
+      & > p {
+        color: $paragraph-txt-clr-dark;
+      }
+      & > hr {
+        border-color: $primary-btn-clr-dark;
+      }
+    }
+  }
+
+
+
+.hireForm {
+    width:100%;
+  & > form {
+    width: 100%;
+    background-color: $content-card-color-light;
+    border-radius: 0.5rem;
+    transition: all 1s ease-in-out;
+    @include flex-center-row;
+    padding: 2rem 0;
+    object-position: top;
+  }
+
+  & > form > .container {
+    @include flex-box-generic(space-between, center, row);
+    flex-wrap: wrap;
+    font-size: 1rem;
+    gap: 1rem 0rem;
+    width: 90%;
+  }
+}
+
+.container > h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: $heading-font;
+  color: $heading-txt-clr-light;
+}
+.container > p {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: $paragraph-txt-clr-light;
+}
+
+.hireForm .container > div:nth-child(4),
+.hireForm .container > div:nth-child(5),
+.hireForm .container > div:nth-child(6) {
+  width: 100%;
+}
+.hireForm .container > div:nth-child(5),
+.hireForm .container > div:nth-child(6) {
+  margin-bottom: 0px;
+  & > button {
+    width: 100%;
+  }
+}
+.hireForm .container > div:nth-child(6) {
+  margin-top: 1rem;
+}
+
+.hireForm .container > div:nth-child(7) {
+  @include flex-box-generic(space-between, center, row);
+  width: 100%;
+  & > button {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hireForm {
+    & > form {
+      background-color: $content-card-color-dark;
+    }
+    .container {
+      & > h2 {
+        color: $heading-txt-clr-dark;
+      }
+      & > p {
+        color: $paragraph-txt-clr-dark;
+      }
+    }
+  }
+}
+
+@include Screen-size-medium {
+   
+  .hireForm > form {
+    width: 100%;
+  }
+  .hireForm .container > div:nth-child(3),
+  .hireForm .container > div:nth-child(4) {
+    width: 48%;
+  }
+}
+
+.link{
+    text-decoration: none;
+color:inherit;
+width:26%;
+}
+
+.iconBox{
+    border-radius: .4rem;
+    background-color: $content-card-color-light;
+    @include flex-center-column;
+    transition: all .4s ease ;
+    padding:2.5rem 1.5rem;
+    width:100%;
+    &>svg{
+       @include squireGenerator(2rem);
+        fill: $primary-btn-clr-lgt;
+        margin-bottom: .8rem;
+    }
+    &>h3{
+        font-family: $heading-font;
+        color: $primary-btn-clr-lgt;
+        font-size: 1.2rem;
+    }
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+@media (prefers-color-scheme:dark){
+    .iconBox{
+        background-color: $content-card-color-dark;
+        &>svg{
+            fill: $primary-btn-clr-dark;
+        }
+        &>h3{
+            color: $primary-btn-clr-dark;
+        }
+    }
+}
+@include Screen-size-medium{
+    .link{
+        width:40%;
+    }
+    .iconBox{
+        &>svg{
+           @include squireGenerator(4rem);
+        }
+        &>h3{
+            font-size: 1rem;
+        }
+    }
+}

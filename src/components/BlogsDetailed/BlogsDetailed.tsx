@@ -3,6 +3,8 @@ import Section from "../common/Section/Section";
 import { BlogsDetailedTypes } from "../../types/types";
 import SvgIcon from "../common/SvgIcon/SvgIcon";
 import SvgProvider from "../../constants/SvgProvider";
+import adminImage from "../../assets/jpg/admin.jpg";
+import logo from  "../../assets/png/logo.png";
 
 const BlogsDetailed = ({
   title,
@@ -18,17 +20,18 @@ const BlogsDetailed = ({
         <p>{description}</p>
         <hr />
         <div className={styles.layout}>
-          <div className={styles.blogsCards}>{children}</div>
+          
           <div className={styles.boxWrapper}>
             {
               <AdminInfo
                 name="Nabin Dhital"
-                image="/#"
+                image={adminImage}
                 adminDescription="This is Admin talking hope you like my works."
               />
             }
             {<RecentPosts />}
           </div>
+          <div className={styles.blogsCards}>{children}</div>
         </div>
       </div>
     </Section>
@@ -69,46 +72,46 @@ const RecentPosts = () => {
       <hr />
       <div className={styles.items}>
         <div>
-          <img src="/#" alt="title" />
+          <img src={logo} alt="title" />
         </div>
         <div>
-          <p>title</p>
+          <p>Title example</p>
           <span>{new Date().toDateString()}</span>
         </div>
       </div>
       <div className={styles.items}>
         <div>
-          <img src="/#" alt="title" />
+          <img src={logo} alt="title" />
         </div>
         <div>
-          <p>title</p>
+          <p>Title example</p>
           <span>{new Date().toDateString()}</span>
         </div>
       </div>
       <div className={styles.items}>
         <div>
-          <img src="/#" alt="title" />
+          <img src={logo} alt="title" />
         </div>
         <div>
-          <p>title</p>
+          <p>Title example</p>
           <span>{new Date().toDateString()}</span>
         </div>
       </div>
       <div className={styles.items}>
         <div>
-          <img src="/#" alt="title" />
+          <img src={logo} alt="title" />
         </div>
         <div>
-          <p>title</p>
+          <p>Title example</p>
           <span>{new Date().toDateString()}</span>
         </div>
       </div>
       <div className={styles.items}>
         <div>
-          <img src="/#" alt="title" />
+          <img src={logo} alt="title" />
         </div>
         <div>
-          <p>title</p>
+          <p>Title example</p>
           <span>{new Date().toDateString()}</span>
         </div>
       </div>

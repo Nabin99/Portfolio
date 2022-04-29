@@ -1,0 +1,39 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+.pageWrapper {
+    @include flex-box-generic(center,center,column);
+    width: 100%;
+    margin-bottom: 8rem;
+    & > h1 {
+      font-family: $heading-font;
+      font-size: 160%;
+      color: $heading-txt-clr-light;
+      padding-top: 6rem;
+    }
+    & > p {
+      font-size: 90%;
+      color: $paragraph-txt-clr-light;
+      padding: 1.5rem 0rem;
+      text-align: center;
+    }
+    & > hr {
+      width: 10%;
+      border: none;
+      border-bottom: 4px solid $primary-btn-clr-lgt;
+      margin-bottom: 2rem;
+    }
+    
+}
+@media (prefers-color-scheme: dark) {
+    .pageWrapper {
+      & > h1 {
+        color: $heading-txt-clr-dark;
+      }
+      & > p {
+        color: $paragraph-txt-clr-dark;
+      }
+      & > hr {
+        border-color: $primary-btn-clr-dark;
+      }
+    }
+  }
