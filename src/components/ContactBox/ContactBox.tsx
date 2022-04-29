@@ -32,12 +32,12 @@ const ContactBox = ({
             <ContactForm/>
         </div>
         <div className={styles.iconsWrapper}>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
-            <SocialIcons title="GitHub" icon={SvgProvider.github}/>
+            <SocialIcons title="GitHub" icon={SvgProvider.github} address="https://github.com/Nabin99"/>
+            <SocialIcons title="LinkedIn" icon={SvgProvider.linkedin} address="https://www.linkedin.com/in/nabin-dhital-a8ba64234"/>
+            <SocialIcons title="Facebook" icon={SvgProvider.facebook} address="https://www.facebook.com/nabin.dhital.56"/>
+            <SocialIcons title="Instagram" icon={SvgProvider.instagram} address="https://www.instagram.com/dhitalnabin11/"/>
+            <SocialIcons title="Twitter" icon={SvgProvider.twitter}  address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"/>
+            <SocialIcons title="Mail" icon={SvgProvider.mail}/>
         </div>
       </div>
     </div>
@@ -182,12 +182,13 @@ const ContactForm = () => {
 interface SocialIconsTypes{
     title:string;
     icon: JSX.Element;
+    address?:string;
 }
 
 
-const SocialIcons = ({title,icon}:SocialIconsTypes)=>{
+const SocialIcons = ({title,icon,address}:SocialIconsTypes)=>{
     return(
-        <a href="/#" target="_blank" title={title} className={styles.link}>
+        <a href={address?address:"mailto:dhitalnabin11@gmail.com"} rel="noreferrer" target="_blank" title={title} className={styles.link}>
         <div className={styles.iconBox}>
             {icon}
             <h3>{title}</h3>
