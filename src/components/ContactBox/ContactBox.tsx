@@ -122,6 +122,7 @@ const ContactForm = () => {
         email: email,
         message: message,
       });
+      clearForm();
     }
   };
   return (

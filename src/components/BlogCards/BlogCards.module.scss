@@ -22,13 +22,13 @@
   }
   & > p{
     padding: .4rem;
+    padding-bottom: 0;
     @include line-clamp(3);
     color: $paragraph-txt-clr-light;
   }
 }
 .imageWrapper {
   width: 100%;  
-  height: 26rem;
   overflow: hidden;
   border-radius: .4rem;
   object-fit: cover;
