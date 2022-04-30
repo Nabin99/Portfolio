@@ -1,6 +1,5 @@
 import Section from "../../common/Section/Section";
 import styles from "./Footer.module.scss";
-import SvgIcon from "../../common/SvgIcon/SvgIcon";
 import SvgProvider from "../../../constants/SvgProvider";
 import SocialIcons from "../../SocialIcons/SocialIcons";
 

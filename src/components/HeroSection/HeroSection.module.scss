@@ -54,3 +54,36 @@
   }
 }
 
+.contactForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include full-size(100vw, 100vh);
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  z-index: 2;
+  @include flex-center-row;
+  &>div{
+    width:98%;
+    border-radius: .4rem;
+    @include bg-gradient-light;
+
+  }
+}
+@media(prefers-color-scheme:dark){
+  .contactForm{
+    &>div{
+      @include bg-gradient-dark;
+    }
+  }
+}
+
+@include Screen-size-medium {
+  .contactForm {
+    &>div{
+      width: 55%;
+
+    }
+  }
+ 
+}

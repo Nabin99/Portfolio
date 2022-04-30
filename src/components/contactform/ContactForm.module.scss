@@ -2,18 +2,10 @@
 @import "../../styles/Sass/abstracts/mixins";
 
 .hireForm {
-  position: fixed;
-  top: 0;
-  left: 0;
-  @include full-size(100vw, 100vh);
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow: auto;
-  z-index: 2;
-  @include flex-center-row;
+  width: 100%;
   & > form {
-    width: 96%;
-    // background-color: $bg-clr-lgt;
-    @include bg-gradient-light;
+    width: 100%;
+    background-color: $content-card-color-light;
     border-radius: 0.5rem;
     transition: all 1s ease-in-out;
     @include flex-center-row;
@@ -62,18 +54,19 @@
 
 .hireForm .container > div:nth-child(7) {
   @include flex-box-generic(space-between, center, row);
+  gap: 1rem;
   width: 100%;
   & > button {
     width: 48%;
+    flex-grow: 1;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .hireForm {
-    background-color: rgba(255, 255, 255, 0.282);
+    
     & > form {
-      // background-color: $bg-clr-dark;
-      @include bg-gradient-dark;
+      background-color: $content-card-color-dark;
     }
     .container {
       & > h2 {
@@ -86,12 +79,4 @@
   }
 }
 
-@include Screen-size-medium {
-  .hireForm > form {
-    width: 55%;
-  }
-  .hireForm .container > div:nth-child(3),
-  .hireForm .container > div:nth-child(4) {
-    width: 48%;
-  }
-}
+

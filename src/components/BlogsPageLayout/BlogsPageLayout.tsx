@@ -1,13 +1,11 @@
-import styles from "./BlogsDetailed.module.scss";
+import styles from "./BlogsPageLayout.module.scss";
 import Section from "../common/Section/Section";
 import { BlogsDetailedTypes } from "../../types/types";
-import SvgIcon from "../common/SvgIcon/SvgIcon";
-import SvgProvider from "../../constants/SvgProvider";
 import adminImage from "../../assets/admin.jpg";
 import logo from "../../assets/logo.png";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
-const BlogsDetailed = ({
+const BlogsPageLayout = ({
   title,
   description,
   children,
@@ -38,7 +36,7 @@ const BlogsDetailed = ({
   );
 };
 
-export default BlogsDetailed;
+export default BlogsPageLayout;
 
 interface AdminInfoTypes {
   name: string;

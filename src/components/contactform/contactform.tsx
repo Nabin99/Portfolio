@@ -14,7 +14,7 @@ import styles from "./ContactForm.module.scss";
 import postData from "../../services/requestHandlers/postData";
 
 interface ContactFormTypes {
-  hideForm: () => void;
+  hideForm?: () => void;
 }
 
 const ContactForm = ({ hideForm }: ContactFormTypes) => {
@@ -94,10 +94,9 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
       })
         .then((res) => {
           toast("Successfully Received Your Message");
+          clearForm();
         })
         .catch((err) => toast("An Error Occured"));
-
-      clearForm();
     }
   };
   return (
@@ -147,7 +146,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
           <div>
             <Button label="Clear" clickHandler={clearForm} />
-            <Button label="Close" clickHandler={hideForm} />
+            {hideForm && <Button label="Close" clickHandler={hideForm} />}
           </div>
         </div>
       </form>
