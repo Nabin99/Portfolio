@@ -12,6 +12,7 @@ import InputBox from "../common/InputBox/InputBox";
 import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
 import styles from "./ContactForm.module.scss";
 import postData from "../../services/requestHandlers/postData";
+import ApiProvider from "../../constants/ApiProvider";
 
 interface ContactFormTypes {
   hideForm?: () => void;
@@ -87,7 +88,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
     if (errCnt === 0) {
       toast("Sending Message");
-      postData("http://localhost:5000/contact/", {
+      postData(ApiProvider.postContact, {
         name: fullName,
         email: email,
         message: message,

@@ -3,12 +3,12 @@ import WorksCard from "../common/WorksCard/WorksCard";
 import styles from "./WorksBox.module.scss";
 import getData from "../../services/requestHandlers/getData";
 
-const WorksBox = () => {
+const WorksBox = ({ url, size = 6 }: { url: string; size?: number }) => {
   const [myWorks, myWorksSet] = useState([]);
 
   useEffect(() => {
     let mounted = true;
-    getData("http://localhost:5000/works/list/6")
+    getData(url + size)
       .then((res) => {
         if (res.ok) return res.json();
         else throw res.json();
@@ -23,7 +23,7 @@ const WorksBox = () => {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [url, size]);
 
   return (
     <div className={styles.worksCardContainer}>
