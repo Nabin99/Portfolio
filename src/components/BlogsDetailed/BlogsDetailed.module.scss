@@ -107,12 +107,7 @@
       width:12rem;
     }
   }
-  & > .iconsWrapper {
-    @include flex-center-row;
-    & svg {
-      fill: $primary-btn-clr-lgt;
-    }
-  }
+ 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -126,11 +121,6 @@
     }
     & > .imageWrapper {
       background-color: $content-card-color-dark;
-    }
-    & > .iconsWrapper {
-      & svg {
-        fill: $primary-btn-clr-dark;
-      }
     }
   }
 }

@@ -147,10 +147,15 @@ table {
   border-spacing: 0;
 }
 html{
-  font-size: 1.9vmax;
+  font-size: 2vmax;
 }
 @include Screen-size-medium{
  html{
-   font-size: 1.22vmax;
+   font-size: 1.7vmax;
  }
+}
+@include Screen-size-large{
+  html{
+    font-size: 1.22vmax;
+  }
 }

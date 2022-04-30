@@ -1,0 +1,25 @@
+@import "../../styles/Sass/abstracts/variables";
+@import "../../styles/Sass/abstracts/mixins";
+
+.iconWrapper {
+    @include flex-center-row;
+    & svg {
+      fill: $primary-btn-clr-lgt;
+    }
+  }
+  .iconWrapperDark{
+      @extend .iconWrapper;
+      & svg{
+          fill: $primary-btn-clr-dark;
+      }
+  }
+
+@media (prefers-color-scheme: dark) {
+ .iconWrapper {
+      & svg {
+        fill: $primary-btn-clr-dark;
+      }
+    }
+  }
+
+
