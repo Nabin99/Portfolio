@@ -25,6 +25,7 @@ export interface InputBoxTypes {
 
 export type NavType = {
   title: string;
+  active:boolean;
   toggle: () => void;
 };
 

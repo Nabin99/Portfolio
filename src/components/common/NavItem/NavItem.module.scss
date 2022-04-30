@@ -21,3 +21,7 @@
     }
   }
 }
+.active {
+  color: $primary-btn-clr-dark;
+  border-bottom: 2px solid $primary-btn-clr-dark;
+}

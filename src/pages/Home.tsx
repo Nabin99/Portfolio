@@ -37,7 +37,7 @@ const sectionLists = [
       " As a Full Stack Developer, I offer full stack software support using different tools like Reactjs, Nextjs, Nodejs, React Native etc.",
     children: <ServiceBox />,
     icon: SvgProvider.service,
-    pageLink: "/",
+    pageLink: "/about",
   },
   {
     title: "Skills, I currently possess.",

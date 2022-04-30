@@ -1,11 +1,13 @@
 import styles from "./NavBar.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SvgProvider from "../../constants/SvgProvider";
 import NavItem from "../common/NavItem/NavItem";
 
 const NavBar = ({ navList }: { navList: string[] }): JSX.Element => {
   const [displayMenu, displayMenuSet] = useState(false);
+  const [activeLink, activeLinkSet] = useState("/");
+  const location = useLocation();
 
   const showMenu = () => {
     if (!displayMenu) displayMenuSet(true);
@@ -21,7 +23,11 @@ const NavBar = ({ navList }: { navList: string[] }): JSX.Element => {
         displayMenuSet(false);
       }
     };
-  });
+    let path = location.pathname;
+    if (path !== activeLink) {
+      activeLinkSet(path);
+    }
+  }, [activeLinkSet, activeLink, location]);
 
   return (
     <header title="Main Navigation Bar">
@@ -35,7 +41,21 @@ const NavBar = ({ navList }: { navList: string[] }): JSX.Element => {
 
           <div className={displayMenu ? styles.showLists : styles.lists}>
             {navList.map((title) => (
-              <NavItem key={title} title={title} toggle={hideMenu} />
+              <NavItem
+                active={
+                  title === "Home"
+                    ? "/" === activeLink
+                    : "/" + title.toLowerCase() === activeLink
+                }
+                key={title}
+                title={title}
+                toggle={() => {
+                  hideMenu();
+                  activeLinkSet(
+                    title === "Home" ? "/" : "/" + title.toLowerCase()
+                  );
+                }}
+              />
             ))}
           </div>
           <div className={styles.menu}>
