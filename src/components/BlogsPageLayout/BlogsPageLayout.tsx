@@ -1,38 +1,34 @@
 import styles from "./BlogsPageLayout.module.scss";
-import Section from "../common/Section/Section";
 import { BlogsDetailedTypes } from "../../types/types";
 import adminImage from "../../assets/admin.jpg";
 import logo from "../../assets/logo.png";
 import SocialIcons from "../SocialIcons/SocialIcons";
+import PageHeader from "../PageHeader/PageHeader";
 
 const BlogsPageLayout = ({
   title,
+  heading,
   description,
   children,
   adminInfo,
   recentPosts,
 }: BlogsDetailedTypes) => {
   return (
-    <Section title="My Blogs">
-      <div className={styles.pageWrapper}>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <hr />
-        <div className={styles.layout}>
-          <div className={styles.boxWrapper}>
-            {
-              <AdminInfo
-                name="Nabin Dhital"
-                image={adminImage}
-                adminDescription="This is Admin talking hope you like my works."
-              />
-            }
-            {<RecentPosts />}
-          </div>
-          <div className={styles.blogsCards}>{children}</div>
+    <PageHeader title={title} heading={heading} description={description}>
+      <div className={styles.layout}>
+        <div className={styles.boxWrapper}>
+          {
+            <AdminInfo
+              name="Nabin Dhital"
+              image={adminImage}
+              adminDescription="This is Admin talking hope you like my works."
+            />
+          }
+          {<RecentPosts />}
         </div>
+        <div className={styles.blogsCards}>{children}</div>
       </div>
-    </Section>
+    </PageHeader>
   );
 };
 

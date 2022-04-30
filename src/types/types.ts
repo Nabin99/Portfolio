@@ -72,6 +72,7 @@ export interface WorksCardTypes {
 
 export interface BlogsDetailedTypes {
   title: string;
+  heading:string;
   description: string;
   children: JSX.Element;
   adminInfo: JSX.Element;

@@ -5,6 +5,7 @@ const Blog = () => {
   return (
     <BlogsPageLayout
       title="My Blogs"
+      heading="Blogs I have written."
       description="These are all the blogs I have."
       adminInfo={<></>}
       recentPosts={<></>}

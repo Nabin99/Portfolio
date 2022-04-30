@@ -18,7 +18,8 @@
     color: $paragraph-txt-clr-light;
     padding: 0.8rem;
     width: 100%;
-    background-color: lighten($bg-clr-lgt, 0%);
+    font-size: 1rem;
+    background-color: lighten($bg-clr-lgt, 6%);
     border: 2px solid transparent;
     outline: none !important;
     transition: all 0.4s ease-in-out;

@@ -1,5 +1,6 @@
 @import "../../styles/Sass/abstracts/variables";
 @import "../../styles/Sass/abstracts/mixins";
+
 .pageWrapper {
     @include flex-box-generic(center,center,column);
     width: 100%;

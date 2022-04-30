@@ -67,6 +67,10 @@
     width:98%;
     border-radius: .4rem;
     @include bg-gradient-light;
+    & > form{
+      background-color: transparent;
+
+    }
 
   }
 }

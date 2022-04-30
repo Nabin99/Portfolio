@@ -1,47 +1,25 @@
 @import "../../styles/Sass/abstracts/variables";
 @import "../../styles/Sass/abstracts/mixins";
 
-.pageWrapper {
-  @include flex-box-generic(center,center,column);
+.layout {
+  @include flex-box-generic(flex-start, stretch, column);
   width: 100%;
-  margin-bottom: 8rem;
-  & > h1 {
-    font-family: $heading-font;
-    font-size: 160%;
-    color: $heading-txt-clr-light;
-    padding-top: 6rem;
-  }
-  & > p {
-    font-size: 90%;
-    color: $paragraph-txt-clr-light;
-    padding: 1.5rem 0rem;
-  }
-  & > hr {
-    width: 10%;
-    border: none;
-    border-bottom: 4px solid $primary-btn-clr-lgt;
-    margin-bottom: 2rem;
-  }
-  & > .layout {
-    @include flex-box-generic(flex-start, stretch, column);
-    width: 100%;
-    min-height: 50vh;
-    gap: 2rem;
-    flex-grow: 1
-  }
-  & > .layout > .boxWrapper {
+  min-height: 50vh;
+  gap: 2rem;
+  flex-grow: 1;
+  & > .boxWrapper {
     @include flex-box-generic(center, stretch, column);
     gap: 2rem;
     width: 100%;
   }
-  & > .layout > .blogsCards {
+  & > .blogsCards {
     @include flex-center-column;
     width: 100%;
-    gap:2rem;
+    gap: 2rem;
   }
 
   @include Screen-size-medium {
-    & > .layout {
+    & {
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
@@ -51,7 +29,7 @@
     }
   }
   @include Screen-size-large {
-    & > .layout {
+    & {
       flex-direction: row-reverse;
       & > .boxWrapper {
         flex-direction: column;
@@ -60,20 +38,6 @@
       & > .blogsCards {
         width: 70%;
       }
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .pageWrapper {
-    & > h1 {
-      color: $heading-txt-clr-dark;
-    }
-    & > p {
-      color: $paragraph-txt-clr-dark;
-    }
-    & > hr {
-      border-color: $primary-btn-clr-dark;
     }
   }
 }
@@ -100,14 +64,14 @@
     background-color: $content-card-color-light;
     margin: 1rem 0rem;
     border-radius: 100%;
+    border: 0.2rem solid $heading-txt-clr-light;
     object-fit: cover;
     object-position: center;
     overflow: hidden;
-    &>img{
-      width:12rem;
+    & > img {
+      width: 12rem;
     }
   }
- 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -121,6 +85,7 @@
     }
     & > .imageWrapper {
       background-color: $content-card-color-dark;
+      border-color: $heading-txt-clr-dark;
     }
   }
 }
@@ -153,16 +118,15 @@
       @include squireGenerator(2rem);
       border-radius: 0.2rem;
       overflow: hidden;
-      &>img{
-        width:2rem;
+      & > img {
+        width: 2rem;
       }
     }
     &:hover {
       background-color: $content-card-color-light;
       cursor: pointer;
-      &>div>p{
+      & > div > p {
         text-decoration: underline;
-        
       }
     }
   }

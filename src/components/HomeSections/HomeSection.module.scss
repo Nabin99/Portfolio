@@ -67,7 +67,7 @@
 @include Screen-size-medium {
   .sectionWrapper {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     & > span,
     & > hr {
       position: absolute;

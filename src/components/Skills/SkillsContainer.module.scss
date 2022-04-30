@@ -14,11 +14,16 @@
     @include flex-center-row;
     transition: all .4s ease;
     &>img{
-       width: 12rem;
+       width: 8rem;
         border-radius: .4rem;
     }
     &:hover{
         transform: scale(1.06);
+    }
+    @include Screen-size-large{
+        &>img{
+            width:12rem;
+        }
     }
 }
 @media (prefers-color-scheme:dark){

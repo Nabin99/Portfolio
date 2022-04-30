@@ -1,55 +1,51 @@
 import ContactForm from "../ContactForm/ContactForm";
 import styles from "./ContactBox.module.scss";
-import Section from "../common/Section/Section";
 import SvgProvider from "../../constants/SvgProvider";
+import PageHeader from "../PageHeader/PageHeader";
 
 interface ContactBoxTypes {
   title: string;
+  heading: string;
   description: string;
 }
 
-const ContactBox = ({ title, description }: ContactBoxTypes) => {
+const ContactBox = ({ title, heading, description }: ContactBoxTypes) => {
   return (
-    <Section title="My Contact Page">
-      <div className={styles.pageWrapper}>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <hr />
-        <div className={styles.layout}>
-          <div className={styles.formWrapper}>
-            <ContactForm />
-          </div>
-          <div className={styles.iconsWrapper}>
-            <SocialIcons
-              title="GitHub"
-              icon={SvgProvider.github}
-              address="https://github.com/Nabin99"
-            />
-            <SocialIcons
-              title="LinkedIn"
-              icon={SvgProvider.linkedin}
-              address="https://www.linkedin.com/in/nabin-dhital-a8ba64234"
-            />
-            <SocialIcons
-              title="Facebook"
-              icon={SvgProvider.facebook}
-              address="https://www.facebook.com/nabin.dhital.56"
-            />
-            <SocialIcons
-              title="Instagram"
-              icon={SvgProvider.instagram}
-              address="https://www.instagram.com/dhitalnabin11/"
-            />
-            <SocialIcons
-              title="Twitter"
-              icon={SvgProvider.twitter}
-              address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"
-            />
-            <SocialIcons title="Mail" icon={SvgProvider.mail} />
-          </div>
+    <PageHeader title={title} heading={heading} description={description}>
+      <div className={styles.layout}>
+        <div className={styles.formWrapper}>
+          <ContactForm />
+        </div>
+        <div className={styles.iconsWrapper}>
+          <SocialIcons
+            title="GitHub"
+            icon={SvgProvider.github}
+            address="https:github.com/Nabin99"
+          />
+          <SocialIcons
+            title="LinkedIn"
+            icon={SvgProvider.linkedin}
+            address="https:www.linkedin.com/in/nabin-dhital-a8ba64234"
+          />
+          <SocialIcons
+            title="Facebook"
+            icon={SvgProvider.facebook}
+            address="https:www.facebook.com/nabin.dhital.56"
+          />
+          <SocialIcons
+            title="Instagram"
+            icon={SvgProvider.instagram}
+            address="https:www.instagram.com/dhitalnabin11/"
+          />
+          <SocialIcons
+            title="Twitter"
+            icon={SvgProvider.twitter}
+            address="https:twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"
+          />
+          <SocialIcons title="Mail" icon={SvgProvider.mail} />
         </div>
       </div>
-    </Section>
+    </PageHeader>
   );
 };
 
