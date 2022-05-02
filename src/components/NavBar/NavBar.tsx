@@ -52,7 +52,7 @@ const NavBar = ({ navList }: { navList: string[] }): JSX.Element => {
                 toggle={() => {
                   hideMenu();
                   activeLinkSet(
-                    title === "Home" ? "/" : "/" + title.toLowerCase()
+                    title === "Home" ? "/" : "/#/" + title.toLowerCase()
                   );
                 }}
               />

@@ -61,8 +61,8 @@ const SocialIcons = ({ title, icon, address }: SocialIconsTypes) => {
   return (
     <a
       href={address ? address : "mailto:dhitalnabin11@gmail.com"}
-      rel="noreferrer"
       target="_blank"
+      rel="noreferrer"
       title={title}
       className={styles.link}
     >
