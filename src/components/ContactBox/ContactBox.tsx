@@ -20,27 +20,27 @@ const ContactBox = ({ title, heading, description }: ContactBoxTypes) => {
           <SocialIcons
             title="GitHub"
             icon={SvgProvider.github}
-            address="https:github.com/Nabin99"
+            address="https://github.com/Nabin99"
           />
           <SocialIcons
             title="LinkedIn"
             icon={SvgProvider.linkedin}
-            address="https:www.linkedin.com/in/nabin-dhital-a8ba64234"
+            address="https://www.linkedin.com/in/nabin-dhital-a8ba64234"
           />
           <SocialIcons
             title="Facebook"
             icon={SvgProvider.facebook}
-            address="https:www.facebook.com/nabin.dhital.56"
+            address="https://www.facebook.com/nabin.dhital.56"
           />
           <SocialIcons
             title="Instagram"
             icon={SvgProvider.instagram}
-            address="https:www.instagram.com/dhitalnabin11/"
+            address="https://www.instagram.com/dhitalnabin11/"
           />
           <SocialIcons
             title="Twitter"
             icon={SvgProvider.twitter}
-            address="https:twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"
+            address="https://twitter.com/dhitalnabin111?t=5TKgyPYJKs45rsoRdjwpIA&s=09"
           />
           <SocialIcons title="Mail" icon={SvgProvider.mail} />
         </div>
