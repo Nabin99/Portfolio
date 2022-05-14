@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import { useGetSomeWorksQuery } from "../../services/worksApi";
 import WorksCard from "../common/WorksCard/WorksCard";
 import styles from "./WorksBox.module.scss";

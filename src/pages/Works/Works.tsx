@@ -1,6 +1,5 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import WorksBox from "../../components/WorksBox/WorksBox";
-// import ApiProvider from "../../constants/ApiProvider";
 import { useGetSomeWorksQuery } from "../../services/worksApi";
 const Works = () => {
   const { data, isLoading, error } = useGetSomeWorksQuery(6);

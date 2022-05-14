@@ -11,7 +11,7 @@ export const messageApi = createApi({
           method:'POST',
           body:message
       }),
-      transformResponse: ({response}) => response.payload.data
+      transformResponse: (response:any) => response.payload.data
     }),
   }),
 })

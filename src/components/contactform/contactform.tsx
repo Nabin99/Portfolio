@@ -11,7 +11,6 @@ import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
 import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
 import styles from "./ContactForm.module.scss";
-// import postData from "../../services/requestHandlers/postData";
 import { usePostMessageMutation } from "../../services/messageApi";
 
 interface ContactFormTypes {
@@ -90,18 +89,13 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
     if (errCnt === 0) {
       toast("Sending Message");
-      // postData(ApiProvider.postContact, {
-      //   name: fullName,
-      //   email: email,
-      //   message: message,
-      // })
-      //   .then((res) => {
-      //     toast("Successfully Received Your Message");
-      //     clearForm();
-      //   })
-      //   .catch((err) => toast("An Error Occured"));
-      let data: unknown = await postMessage({ name: fullName, email, message });
-      console.log(data);
+      let data: any = await postMessage({ name: fullName, email, message });
+      if (data.data) {
+        toast("Successfully Received Your Message");
+        clearForm();
+      } else {
+        toast("An Error Occured");
+      }
     }
   };
   return (
