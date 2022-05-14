@@ -5,7 +5,6 @@ import ServiceBox from "../components/ServiceBox/ServiceBox";
 import SkillsContainer from "../components/Skills/SkillsContainer";
 import WorksBox from "../components/WorksBox/WorksBox";
 import SvgProvider from "../constants/SvgProvider";
-import ApiProvider from "../constants/ApiProvider";
 
 const Home = () => {
   return (
@@ -56,7 +55,7 @@ const sectionLists = [
     heading: "Works That I Have Done.",
     description:
       "I have been consistently delivering great projects with great customers satisfaction. Different Project I have worked on are listed here.",
-    children: <WorksBox url={ApiProvider.getWorks} />,
+    children: <WorksBox size={6} />,
     icon: SvgProvider.work,
     pageLink: "/works",
   },

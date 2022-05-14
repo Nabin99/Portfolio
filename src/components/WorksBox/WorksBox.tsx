@@ -1,41 +1,25 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useGetSomeWorksQuery } from "../../services/worksApi";
 import WorksCard from "../common/WorksCard/WorksCard";
 import styles from "./WorksBox.module.scss";
-import getData from "../../services/requestHandlers/getData";
 
-const WorksBox = ({ url, size = 6 }: { url: string; size?: number }) => {
-  const [myWorks, myWorksSet] = useState([]);
-
-  useEffect(() => {
-    let mounted = true;
-    getData(url + size)
-      .then((res) => {
-        if (res.ok) return res.json();
-        else throw res.json();
-      })
-      .then((data) => {
-        if (mounted) myWorksSet(data.payload.data);
-      })
-      .catch(async (err) => {
-        console.log(await err);
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, [url, size]);
+const WorksBox = ({ size = 6 }: { size?: number | null }) => {
+  const { data, isLoading, error } = useGetSomeWorksQuery(size);
 
   return (
     <div className={styles.worksCardContainer}>
-      {myWorks.map((obj: any) => (
-        <WorksCard
-          key={obj.title + obj.projectDate}
-          description={obj.description}
-          createdAt={obj.projectDate}
-          title={obj.title}
-          urlAddress={obj.projectLink as string}
-        />
-      ))}
+      <>{isLoading && <span>Loading....</span>}</>
+      <>{error && <span>An Error Occured!</span>}</>
+      {data &&
+        data.map((obj: any) => (
+          <WorksCard
+            key={obj.title + obj.projectDate}
+            description={obj.description}
+            createdAt={obj.projectDate}
+            title={obj.title}
+            urlAddress={obj.projectLink as string}
+          />
+        ))}
     </div>
   );
 };

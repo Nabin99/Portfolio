@@ -11,8 +11,8 @@ import Button from "../common/Button/Button";
 import InputBox from "../common/InputBox/InputBox";
 import TextAreaBox from "../common/TextAreaBox/TextAreaBox";
 import styles from "./ContactForm.module.scss";
-import postData from "../../services/requestHandlers/postData";
-import ApiProvider from "../../constants/ApiProvider";
+// import postData from "../../services/requestHandlers/postData";
+import { usePostMessageMutation } from "../../services/messageApi";
 
 interface ContactFormTypes {
   hideForm?: () => void;
@@ -27,6 +27,8 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
     emailError: false,
     messageError: false,
   });
+
+  const [postMessage] = usePostMessageMutation();
 
   const clearForm = () => {
     fullNameSet("");
@@ -62,7 +64,7 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
     }
   };
 
-  const submit = () => {
+  const submit = async () => {
     let tempErr = {
       fullNameError: false,
       emailError: false,
@@ -88,16 +90,18 @@ const ContactForm = ({ hideForm }: ContactFormTypes) => {
 
     if (errCnt === 0) {
       toast("Sending Message");
-      postData(ApiProvider.postContact, {
-        name: fullName,
-        email: email,
-        message: message,
-      })
-        .then((res) => {
-          toast("Successfully Received Your Message");
-          clearForm();
-        })
-        .catch((err) => toast("An Error Occured"));
+      // postData(ApiProvider.postContact, {
+      //   name: fullName,
+      //   email: email,
+      //   message: message,
+      // })
+      //   .then((res) => {
+      //     toast("Successfully Received Your Message");
+      //     clearForm();
+      //   })
+      //   .catch((err) => toast("An Error Occured"));
+      let data: unknown = await postMessage({ name: fullName, email, message });
+      console.log(data);
     }
   };
   return (

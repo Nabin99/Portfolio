@@ -1,1 +1,0 @@
-export const BASE_URL = "https://serene-dusk-53017.herokuapp.com/";
