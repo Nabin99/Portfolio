@@ -1,9 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import WorksBox from "../../components/WorksBox/WorksBox";
-import { useGetSomeWorksQuery } from "../../services/worksApi";
 const Works = () => {
-  const { data, isLoading, error } = useGetSomeWorksQuery(6);
-  !isLoading && !error && console.log(data);
   return (
     <PageHeader
       title="My Wroks Page"
