@@ -1,7 +1,6 @@
 import CardsLink from "../CardsLink/CardsLink";
 import styles from "./WorksCard.module.scss";
-import image from "../../../assets/workfallbackimg.png";
-import logo from "../../../assets/logo.png";
+import { workfallbackImg, logoImg } from "../../../constants/imageProvider";
 import { WorksCardTypes } from "../../../types/types";
 
 const WorksCard = ({
@@ -15,11 +14,14 @@ const WorksCard = ({
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.imageWrapper}>
-        <img src={imgSrc === "" ? image : imgSrc} alt={title + " image"} />
+        <img
+          src={imgSrc === "" ? workfallbackImg : imgSrc}
+          alt={title + " image"}
+        />
       </div>
       <div className={styles.titleWrapper}>
         <div className={styles.icons}>
-          <img src={iconSrc === "" ? logo : iconSrc} alt="icon" />
+          <img src={iconSrc === "" ? logoImg : iconSrc} alt="icon" />
         </div>
         <div>
           <h3 title={title}>{title.toUpperCase()}</h3>

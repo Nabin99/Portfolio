@@ -1,7 +1,6 @@
 import styles from "./BlogsPageLayout.module.scss";
 import { BlogsDetailedTypes } from "../../types/types";
-import adminImage from "../../assets/admin.jpg";
-import logo from "../../assets/logo.png";
+import { adminImg, logoImg } from "../../constants/imageProvider";
 import SocialIcons from "../SocialIcons/SocialIcons";
 import PageHeader from "../PageHeader/PageHeader";
 
@@ -20,7 +19,7 @@ const BlogsPageLayout = ({
           {
             <AdminInfo
               name="Nabin Dhital"
-              image={adminImage}
+              image={adminImg}
               adminDescription="This is Admin talking hope you like my works."
             />
           }
@@ -60,7 +59,7 @@ const RecentPosts = () => {
       <hr />
       <div className={styles.items}>
         <div>
-          <img src={logo} alt="title" />
+          <img src={logoImg} alt="title" />
         </div>
         <div>
           <p>Title example</p>
@@ -69,7 +68,7 @@ const RecentPosts = () => {
       </div>
       <div className={styles.items}>
         <div>
-          <img src={logo} alt="title" />
+          <img src={logoImg} alt="title" />
         </div>
         <div>
           <p>Title example</p>
@@ -78,7 +77,7 @@ const RecentPosts = () => {
       </div>
       <div className={styles.items}>
         <div>
-          <img src={logo} alt="title" />
+          <img src={logoImg} alt="title" />
         </div>
         <div>
           <p>Title example</p>
@@ -87,7 +86,7 @@ const RecentPosts = () => {
       </div>
       <div className={styles.items}>
         <div>
-          <img src={logo} alt="title" />
+          <img src={logoImg} alt="title" />
         </div>
         <div>
           <p>Title example</p>
@@ -96,7 +95,7 @@ const RecentPosts = () => {
       </div>
       <div className={styles.items}>
         <div>
-          <img src={logo} alt="title" />
+          <img src={logoImg} alt="title" />
         </div>
         <div>
           <p>Title example</p>

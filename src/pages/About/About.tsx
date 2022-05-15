@@ -1,6 +1,6 @@
 import PageHeader from "../../components/PageHeader/PageHeader";
 import styles from "./About.module.scss";
-import adminImg from "../../assets/about.png";
+import { aboutImg } from "../../constants/imageProvider";
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
       description="Here you can learn in details about me."
     >
       <div className={styles.aboutBox}>
-        <AboutImage image={adminImg} />
+        <AboutImage image={aboutImg} />
         <div className={styles.infoContainer}>
           <h2>
             Hi, There,
